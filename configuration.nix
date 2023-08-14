@@ -53,6 +53,9 @@ in
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "networkmanager" ];
     packages = with pkgs; [
+      gnome.gedit
+      gnutar
+      netcat-openbsd
       tree
     ];
   };
