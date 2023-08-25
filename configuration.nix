@@ -65,6 +65,8 @@ in
   environment.systemPackages = with pkgs; [
     brave
     git
+    netcat-openbsd
+    nettools
     vim
     wget
   ];
