@@ -1,5 +1,5 @@
 #!/bin/bash
-
+path=$(pwd)
 #Check if the script is run as root
 if [ "$EUID" -ne 0 ];then
     echo "Please run as root"
@@ -48,5 +48,16 @@ mount /dev/disk/by-label/nixos /mnt
 # Installing
 echo "Installing"
 nixos-generate-config --root /mnt
-cp configuration.nix /mnt/etc/nixos/
-nixos-install
+if [ -f ./configuration.nix ];then
+    cp configuration.nix /mnt/etc/nixos/
+    nixos-install
+else if [ -f $path/configuration.nix ];then
+    cp $path/configuration.nix /mnt/etc/nixos/
+    nixos-install
+else if [ -f $path/nixos/configuration.nix ];then
+    cp $path/nixos/configuration.nix /mnt/etc/nixos/
+    nixos-install
+else
+    echo "No configuration.nix found"
+    exit
+fi
