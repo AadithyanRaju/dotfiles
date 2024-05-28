@@ -103,6 +103,7 @@ alias i='sudo pacman -S --noconfirm'
 
 
 #Imports
+. $HOME/.dotfiles/term/custom
 #. $HOME/.dotfiles/term/filecom
 #. $HOME/.dotfiles/term/alias
 #. $HOME/.dotfiles/term/hypr
