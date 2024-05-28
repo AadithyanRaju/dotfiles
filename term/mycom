@@ -97,7 +97,8 @@ alias up='yay | tee ~/log/uplog-$(date +%d-%m-%Y-%H:%M:%S).log'
 alias upg='sudo pacman -Syyu --noconfirm | tee ~/log/upglog-$(date +%d-%m-%Y-%H:%M:%S).log'
 alias i='sudo pacman -S --noconfirm'
 
-
+alias nso='nix --extra-experimental-features nix-command store optimise'
+alias nclean='nix-collect-garbage -d'
 
 
 

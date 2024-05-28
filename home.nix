@@ -43,33 +43,33 @@
       # multimarkdown
       # wpsoffice 
       #Communication
-      telegram-desktop
+      #telegram-desktop
 
 
       #Development
-      gcc
+      #gcc
       gh
       ghc
-      gnumake
-      libgcc			
-      python3
+      #gnumake
+      #libgcc			
+      #python3
 
       #Media
-      vlc		
+      #vlc		
 
 
       #RPC
-      findutils
-      libnsl
-      libtirpc
-      ntirpc
-      rpcsvc-proto
-      rpcbind
+      #findutils
+      #libnsl
+      #libtirpc
+      #ntirpc
+      #rpcsvc-proto
+      #rpcbind
 
       #Tools
-      appimage-run	#appimage
-      android-tools
-      alacritty
+      #appimage-run	#appimage
+      #android-tools
+      #alacritty
       binwalk			
       inetutils
       netcat-gnu	#nc
