@@ -1,0 +1,108 @@
+alias s='sudo'
+
+
+# Most used commands
+alias l='ls'
+alias ll='ls -alps'
+alias c='clear'
+
+# Power commands
+alias off='sudo shutdown now'
+alias re='reboot'
+
+# Applications Launcher
+alias burp='bash $HOME/.BURP/burp2'
+alias minecraft='java -jar $HOME/Tools/TLauncher.jar'
+alias mine='minecraft; exit'
+alias python='python3'
+alias scr='scrcpy -Sw --power-off-on-close'
+alias botim='~/Tools/Botim*.AppImage'
+alias ghidra='~/Tools/ghidra_11.0.1_PUBLIC/ghidraRun'
+alias server='ssh aws'
+
+# Anime
+alias anime-conf='bash $HOME/Scripts/animdl_conf.sh'
+anime-stream(){
+    if [ $# -eq 2 ];then
+        python3 -m animdl stream $1 -r $2
+    elif [ $# -eq 1 ];then
+        python3 -m animdl stream $1
+    fi
+}
+
+# AUR Install and Upgrade
+alias appsup='bash $HOME/Scripts/appsup.sh'
+alias appup='bash $HOME/Scripts/appup.sh'
+alias appinstall='bash $HOME/Scripts/appinstall.sh'
+alias appsclean='bash $HOME/Scripts/appsclean.sh'
+
+# FireWall
+alias fd='sudo ufw disable'
+alias fe='sudo ufw enable'
+alias fs='sudo ufw status'
+
+# Youtube
+#alias ytup='bash $HOME/Scripts/ytup.sh'
+#alias ytdown='bash $HOME/Scripts/ytdown.sh'
+
+# Github
+alias gitup='bash $HOME/Scripts/gitup.sh'
+
+#Arch-Clean
+alias clean='bash $HOME/Scripts/clean.sh'
+
+
+# Kali Bluetooth
+# alias bt='bluetoothctl power $(if [[ $(bluetoothctl show | grep Power | cut -d " " -f 2) == "no" ]]; then echo "on"; else echo "off"; fi)'
+
+
+#Extraction
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1   ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
+
+#NixOS
+
+inix ()
+{
+  nix-env -iA nixpkgs.$1
+  nix-collect-garbage
+}
+alias qnix='nix-env -q'
+
+
+#export
+#export $BROWSER='google-chrome-stable'
+#export NIXPKGS_ALLOW_UNFREE=1
+
+alias up='yay | tee ~/log/uplog-$(date +%d-%m-%Y-%H:%M:%S).log'
+alias upg='sudo pacman -Syyu --noconfirm | tee ~/log/upglog-$(date +%d-%m-%Y-%H:%M:%S).log'
+alias i='sudo pacman -S --noconfirm'
+
+
+
+
+
+
+#Imports
+#. $HOME/.dotfiles/term/filecom
+#. $HOME/.dotfiles/term/alias
+#. $HOME/.dotfiles/term/hypr

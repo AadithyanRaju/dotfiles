@@ -1,0 +1,40 @@
+hash_file() {
+  if [ $# -eq 2 ]; then
+    case $1 in
+      sha256)
+        sha256sum "$2" | awk '{print $1}'
+        ;;
+      sha512)
+        sha512sum "$2" | awk '{print $1}'
+        ;;
+      md5)
+        md5sum "$2" | awk '{print $1}'
+        ;;
+      *)
+        echo "Unsupported hash function: $1"
+        ;;
+    esac
+  else
+    echo "Usage: hash_file <hash_function> <filepath>"
+  fi
+}
+
+secure_copy() {
+  if [ $# -ne 2 ]; then
+    echo "Usage: secure_copy <source_file> <destination_file>"
+    return
+  fi
+  source_file="$1"
+  destination_file="$2"
+
+  cp "$source_file" "$destination_file"
+  copied_hash=$(hash_file sha512 "$destination_file")
+  source_hash=$(hash_file sha512 "$source_file")
+
+  if [ "$copied_hash" = "$source_hash" ]; then
+    echo "File copied successfully."
+  else
+    rm "$destination_file"
+    echo "File copy failed. SHA512 hash mismatch."
+  fi
+}

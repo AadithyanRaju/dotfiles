@@ -1,0 +1,34 @@
+ali(){
+  if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    if [ $NAME == "Arch Linux" ]; then
+    elif [ $NAME == "Ubuntu" ]; then
+      alias up='sudo apt update && sudo apt upgrade -y && sudo apt autoremove'
+      alias upg='sudo apt update && sudo apt dist-upgrade -y && sudo apt autoremove'
+      alias i='sudo apt install -y'
+      alias ideb='sudo dpkg -i'
+    elif [ $NAME == "NixOS" ]; then
+      alias nixup='nix-channel --update && nix-env --upgrade'
+      alias build='sudo nix-channel --update;sudo nixos-rebuild switch'
+      sysup(){
+        cd /home/aadithyan/.dotfiles
+        nix flake update
+        sudo nixos-rebuild switch --flake /home/aadithyan/.dotfiles
+        cd -
+      }
+      homeup(){
+        cd /home/aadithyan/.dotfiles
+        nix flake update
+        home-manager switch --flake /home/aadithyan/.dotfiles 
+        cd -
+      }
+      i(){
+        nix-env -iA nixpkgs.$1
+        nix-collect-garbage
+      }
+      alias q='nix-env -q'
+      alias clean='nix-collect-garbage;sudo nix-collect-garbage'
+      alias up='sysup;homeup'
+    fi
+  fi
+}
