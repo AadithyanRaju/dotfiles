@@ -105,6 +105,7 @@ alias nclean='nix-collect-garbage -d'
 
 #Imports
 . $HOME/.dotfiles/term/custom
+. $HOME/.dotfiles/term/env
 #. $HOME/.dotfiles/term/filecom
 #. $HOME/.dotfiles/term/alias
 #. $HOME/.dotfiles/term/hypr
