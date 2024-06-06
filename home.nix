@@ -68,13 +68,21 @@
 
       #Tools
       #appimage-run	#appimage
-      #android-tools
+      android-tools
       #alacritty
       binwalk			
       inetutils
       netcat-gnu	#nc
       nmap
       # wireshark-qt	#WireShark
+      scrcpy
+      sticky
+      btop
+      xfce.xfce4-settings
+      networkmanagerapplet
+      #Enjoy
+      ani-cli
+      vlc
 
   ];
 

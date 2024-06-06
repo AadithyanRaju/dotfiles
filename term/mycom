@@ -99,6 +99,7 @@ alias i='sudo pacman -S --noconfirm'
 
 alias nso='nix --extra-experimental-features nix-command store optimise'
 alias nclean='nix-collect-garbage -d'
+alias homeup='home-manager switch -f $HOME/.dotfiles/home.nix'
 
 
 
