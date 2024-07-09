@@ -48,8 +48,8 @@
 
       #Development
       #gcc
-      gh
-      ghc
+      #gh
+      #ghc
       #gnumake
       #libgcc			
       #python3
@@ -68,21 +68,21 @@
 
       #Tools
       #appimage-run	#appimage
-      android-tools
+      #android-tools
       #alacritty
       binwalk			
-      inetutils
-      netcat-gnu	#nc
-      nmap
+      #inetutils
+      #netcat-gnu	#nc
+      #nmap
       # wireshark-qt	#WireShark
-      scrcpy
+      #scrcpy
       sticky
-      btop
-      xfce.xfce4-settings
-      networkmanagerapplet
+      #btop
+      #xfce.xfce4-settings
+      #networkmanagerapplet
       #Enjoy
-      ani-cli
-      vlc
+      #ani-cli
+      #vlc
 
   ];
 

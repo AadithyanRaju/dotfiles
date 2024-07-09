@@ -16,7 +16,6 @@
     hosts = {
       "127.0.0.1" = [ "localhost" "OMEN" ];
       "::1" = [ "localhost" "OMEN" ];
-      "13.234.164.24" = [ "server" ];
     };
     # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
    };
