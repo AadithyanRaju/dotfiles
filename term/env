@@ -1,3 +1,0 @@
-myenv(){
-    source $HOME/.dotfiles/Scripts/myenv/bin/activate
-}

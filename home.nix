@@ -48,7 +48,7 @@
 
       #Development
       #gcc
-      #gh
+      gh
       #ghc
       #gnumake
       #libgcc			
