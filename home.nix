@@ -77,6 +77,7 @@
       # wireshark-qt	#WireShark
       #scrcpy
       sticky
+      x2goclient
       #btop
       #xfce.xfce4-settings
       #networkmanagerapplet

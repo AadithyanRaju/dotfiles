@@ -73,6 +73,7 @@ alias homeup='home-manager switch -f $HOME/.dotfiles/home.nix'
 #Imports
 . $HOME/.dotfiles/term/scripts
 . $HOME/.dotfiles/term/functions
+. $HOME/.dotfiles/term/connections
 #. $HOME/.dotfiles/term/filecom
 #. $HOME/.dotfiles/term/alias
 #. $HOME/.dotfiles/term/hypr
