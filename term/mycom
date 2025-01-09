@@ -56,7 +56,7 @@ alias qnix='nix-env -q'
 
 
 #export
-export $BROWSER='google-chrome-stable'
+#export BROWSER='google-chrome-stable'
 #export NIXPKGS_ALLOW_UNFREE=1
 
 alias up='yay | tee ~/log/uplog-$(date +%d-%m-%Y-%H:%M:%S).log'
@@ -73,7 +73,7 @@ alias homeup='home-manager switch -f $HOME/.dotfiles/home.nix'
 #Imports
 . $HOME/.dotfiles/term/scripts
 . $HOME/.dotfiles/term/functions
-. $HOME/.dotfiles/term/connections
+#. $HOME/.dotfiles/term/connections
 #. $HOME/.dotfiles/term/filecom
 #. $HOME/.dotfiles/term/alias
 #. $HOME/.dotfiles/term/hypr
