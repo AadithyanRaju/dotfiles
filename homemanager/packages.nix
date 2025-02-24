@@ -9,8 +9,7 @@
       gh
       #ghc
       gnumake
-      #libgcc			
-      python3
+      #libgcc		
 
       #Media
 

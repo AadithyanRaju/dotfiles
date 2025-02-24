@@ -3,79 +3,32 @@
 {
   imports =
     [ 
+      ./cuda.nix
+      ./docker.nix
+      ./gaming.nix
+      ./ld.nix
+      ./sys.nix
+      ./systemPackages.nix
+      ./users.nix
+      ./xserver.nix
+
+      # Do Not Touch
       ./boot.nix
       ./hardware-configuration.nix
-      ./sys.nix
+      ./network.nix
+      ./settings.nix
       ./time-locale.nix
-      ./users.nix
     ];
 
-  networking = {
-    hostName = "OMEN"; 
-    networkmanager.enable = true;
-    hosts = {
-      "127.0.0.1" = [ "localhost" "OMEN" ];
-      "::1" = [ "localhost" "OMEN" ];
-    };
-    # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-   };
-  
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-
-
-  # Enable the X11 windowing system.
   services = {
-    blueman.enable = true;
     gnome.gnome-keyring.enable = true;
-    #pulseaudio.enable = true;
-    xserver = {
-      enable = true;
-      #autorun = true;
-      desktopManager.gnome.enable = true;
-      #libinput = {
-      #  enable = true;
-      #  disableWhileTyping = true;
-      #};
-      #windowManager = {
-      #  xmonad = {
-      #    enable = true;
-      #    enableContribAndExtras = true;
-      #    config = /home/aadithyan/.config/xmonad/xmonad.hs;
-      #  };
-      #};
-      displayManager = {
-        #defaultSession = "gnome";
-        gdm.enable = true;
-        };
-      
-      xkb.layout = "us";
-      videoDrivers = [ "nvidia" ];
-    };
+    flatpak.enable = true;
+
    };
 
   # Configure keymap in X11
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
 
-  # Enable CUPS to print documents.
-  # services.printing.enable = true;
-
-  
-  nixpkgs.config = {
-    allowUnfree = true;
-    #allowBroken = true;
-  };
-
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-    btop
-    tree
-    vim 
-    wget
-#    findutils
-  ];
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
@@ -96,41 +49,7 @@
     };
   };
   
-  networking = {
-    firewall = {
-      enable = true;
-      allowedTCPPorts = [ 8000 ];
-      allowedUDPPorts = [ 8000 ];
-    };
-  };
-  
   # services.openssh.enable = true;
 
-  nix = {
-    settings={
-      auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-    };
-    gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 7d";
-    };
-  };
-
-  system = {
-    autoUpgrade = {
-      enable = true;
-      channel = "https://nixos.org/channels/nixos-unstable";
-      dates = "weekly";
-    };
-    #copySystemConfiguration = true; #/run/current-system/configuration.nix
-    stateVersion = "24.05";
-  };
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [
-    # Add any missing dynamic libraries for unpackaged programs
-    # here, NOT in environment.systemPackages
-  ];
 }
 
