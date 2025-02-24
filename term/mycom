@@ -65,8 +65,16 @@ alias i='sudo pacman -S --noconfirm'
 
 alias nso='nix --extra-experimental-features nix-command store optimise'
 alias nclean='nix-collect-garbage -d'
-alias homeup='home-manager switch -f $HOME/.dotfiles/home.nix'
-
+sysup(){
+  cd /home/aadithyan/.dotfiles
+  nix flake update
+  sudo nixos-rebuild switch --flake /home/aadithyan/.dotfiles
+  homeup
+  cd -
+}
+homeup(){
+  home-manager switch -f /home/aadithyan/.dotfiles/homemanager/home.nix
+}
 
 
 

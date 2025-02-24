@@ -30,7 +30,7 @@
   services = {
     blueman.enable = true;
     gnome.gnome-keyring.enable = true;
-    
+    #pulseaudio.enable = true;
     xserver = {
       enable = true;
       #autorun = true;
@@ -39,13 +39,13 @@
       #  enable = true;
       #  disableWhileTyping = true;
       #};
-      windowManager = {
-        xmonad = {
-          enable = true;
-          enableContribAndExtras = true;
-          config = /home/aadithyan/.config/xmonad/xmonad.hs;
-        };
-      };
+      #windowManager = {
+      #  xmonad = {
+      #    enable = true;
+      #    enableContribAndExtras = true;
+      #    config = /home/aadithyan/.config/xmonad/xmonad.hs;
+      #  };
+      #};
       displayManager = {
         #defaultSession = "gnome";
         gdm.enable = true;
@@ -125,7 +125,7 @@
       dates = "weekly";
     };
     #copySystemConfiguration = true; #/run/current-system/configuration.nix
-    stateVersion = "23.05";
+    stateVersion = "24.05";
   };
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
@@ -133,3 +133,4 @@
     # here, NOT in environment.systemPackages
   ];
 }
+
