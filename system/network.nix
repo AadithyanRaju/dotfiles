@@ -10,8 +10,8 @@
         };
         firewall = {
             enable = true;
-            allowedTCPPorts = [ 8000 ];
-            allowedUDPPorts = [ 8000 ];
+            # allowedTCPPorts = [ 8000 ];
+            # allowedUDPPorts = [ 8000 ];
         };
         # wireless.enable = true;  # Enables wireless support via wpa_supplicant.
    };

@@ -69,7 +69,6 @@ sysup(){
   cd /home/aadithyan/.dotfiles
   nix flake update
   sudo nixos-rebuild switch --flake /home/aadithyan/.dotfiles
-  homeup
   cd -
 }
 homeup(){

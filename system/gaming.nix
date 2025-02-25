@@ -11,6 +11,8 @@
     prime = {
       offload.enable = true;
       offload.enableOffloadCmd = true;
+      amdgpuBusId = "PCI:7:0:0";  # Adjust based on your output
+      nvidiaBusId = "PCI:1:0:0";  # Adjust based on your output
     };
   };
 
@@ -20,22 +22,25 @@
   programs.gnome-terminal.enable = true;
 
   # Vulkan, Wine, and Gaming Dependencies
-  hardware.opengl = {
-    enable = true;
-    driSupport = true;
-    driSupport32Bit = true;
-    extraPackages = with pkgs; [
-      vulkan-loader
-      vulkan-tools
-      vulkan-validation-layers
-      vulkan-extension-layer
-      libvdpau
-      vaapiVdpau
-      libva
-      wineWowPackages.stable
-    ];
+  hardware = {
+    graphics = {
+        enable = true;
+        extraPackages = with pkgs; [
+            vulkan-loader
+            vulkan-tools
+            vulkan-validation-layers
+            vulkan-extension-layer
+            libvdpau
+            vaapiVdpau
+            libva
+            wineWowPackages.stable
+        ];
+    };
   };
 
-  # Lutris for Non-Steam Games
-  programs.lutris.enable = true;
+    # Lutris for Non-Steam Games
+    environment.systemPackages = with pkgs; [
+      heroic
+      lutris
+    ];
 }

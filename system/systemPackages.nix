@@ -15,7 +15,6 @@
     python3
     tree
     vim 
-    vntop
     wget
 
     #Gaming

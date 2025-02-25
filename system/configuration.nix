@@ -3,7 +3,7 @@
 {
   imports =
     [ 
-      ./cuda.nix
+      #./cuda.nix
       ./docker.nix
       ./gaming.nix
       ./ld.nix

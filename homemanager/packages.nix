@@ -3,6 +3,7 @@
   home.packages = with pkgs; [
       # libsForQt5.ktorrent
       multimarkdown
+      pciutils
       
       #Development
       gcc
