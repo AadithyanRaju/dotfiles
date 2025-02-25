@@ -10,6 +10,7 @@
       ./sys.nix
       ./systemPackages.nix
       ./users.nix
+      ./vmware.nix
       ./xserver.nix
 
       # Do Not Touch
