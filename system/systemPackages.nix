@@ -12,6 +12,7 @@
     htop
     git
     neovim
+    openvpn
     python3
     tree
     vim 

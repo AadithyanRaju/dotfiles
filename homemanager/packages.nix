@@ -29,8 +29,10 @@
       #alacritty
       binwalk			
       #inetutils
+      lsof
       netcat-gnu	#nc
       nmap
+      pdfcrack
       #wireshark-qt	#WireShark
       scrcpy
       sticky
