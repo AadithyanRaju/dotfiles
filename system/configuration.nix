@@ -9,6 +9,7 @@
       ./ld.nix
       ./sys.nix
       ./systemPackages.nix
+      ./theme.nix
       ./users.nix
       ./vmware.nix
       ./xserver.nix
