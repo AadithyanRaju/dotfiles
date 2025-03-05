@@ -1,22 +1,11 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-      # libsForQt5.ktorrent
       multimarkdown
-      pciutils
       
-      #Development
-      gcc
-      gh
-      #ghc
-      gnumake
-      #libgcc		
-
-      #Media
-
+      
 
       #RPC
-      #findutils
       #libnsl
       #libtirpc
       #ntirpc
@@ -24,24 +13,13 @@
       #rpcbind
 
       #Tools
-      appimage-run	#appimage
-      #android-tools
+      #
       #alacritty
-      binwalk			
-      #inetutils
-      lsof
-      netcat-gnu	#nc
-      nmap
-      pdfcrack
-      #wireshark-qt	#WireShark
-      scrcpy
-      sticky
+      
       #x2goclient
       #xfce.xfce4-settings
       #networkmanagerapplet
       
-      #Enjoy
-      ani-cli
  
   ];
 }

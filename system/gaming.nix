@@ -42,5 +42,10 @@
     environment.systemPackages = with pkgs; [
       heroic
       lutris
+      gamemode
+      glxinfo
+      mesa
+      protonup-qt
+      steam
     ];
 }

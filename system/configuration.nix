@@ -9,7 +9,7 @@
       ./ld.nix
       ./sys.nix
       ./systemPackages.nix
-      ./theme.nix
+      #./theme.nix
       ./users.nix
       ./vmware.nix
       ./xserver.nix
@@ -19,6 +19,7 @@
       ./hardware-configuration.nix
       ./network.nix
       ./settings.nix
+      ./shell.nix
       ./time-locale.nix
     ];
 
@@ -39,18 +40,7 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-  programs = {
-    zsh = {
-      enable = true;
-      enableCompletion = true;
-      ohMyZsh.theme = "lambda";
-      ohMyZsh.enable = true;
-      ohMyZsh.plugins = [ "git" ];
-      autosuggestions.enable = true;
-      syntaxHighlighting.enable = true;
-    };
-  };
-  
+
   # services.openssh.enable = true;
 
 }
