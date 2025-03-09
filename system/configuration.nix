@@ -15,6 +15,7 @@
       ./xserver.nix
 
       # Do Not Touch
+      ./appimage.nix
       ./boot.nix
       ./hardware-configuration.nix
       ./network.nix

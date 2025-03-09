@@ -6,7 +6,6 @@
     #allowBroken = true;
   };
   environment.systemPackages = with pkgs; [
-    appimage-run	#appimage
     btop
     curl
     htop
@@ -21,8 +20,6 @@
     gitkraken
     gh
 
-
-
     #Programming
     gcc
     ghc     #Haskell compiler
@@ -31,10 +28,9 @@
     jq
     libgcc	
     nodejs_23 
-    python3
-
-    #Python packages
-    python313Packages.requests
+    (python3.withPackages (subpkgs: with subpkgs; [
+        requests
+    ]))
 
     #Penetration Testing
     binwalk
@@ -71,6 +67,7 @@
     #Media
     ani-cli
     ffmpeg_6-full
+    obs-studio
     vlc
   ];
 }
