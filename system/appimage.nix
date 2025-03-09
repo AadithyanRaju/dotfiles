@@ -8,6 +8,6 @@
             extraPkgs = pkgs: [
                 # missing libraries here, e.g.: `pkgs.libepoxy`
             ];
-        }
+        };
     };
 }
