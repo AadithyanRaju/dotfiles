@@ -27,7 +27,7 @@
     go
     jq
     libgcc	
-    nodejs_23 
+    #nodejs_23
     (python3.withPackages (subpkgs: with subpkgs; [
         requests
     ]))

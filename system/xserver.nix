@@ -2,9 +2,17 @@
 
 {
     services = {
+        displayManager = {
+            #gdm.enable = true;
+            sddm.enable = true;
+        };
+        desktopManager = {
+            #gnome.enable = true;
+            plasma6.enable = true;
+        };
         xserver = {
             enable = true;
-            desktopManager.gnome.enable = true;
+            
             #libinput = {
             #  enable = true;
             #  disableWhileTyping = true;
@@ -16,10 +24,7 @@
             #    config = /home/aadithyan/.config/xmonad/xmonad.hs;
             #  };
             #};
-            displayManager = {
-              #defaultSession = "gnome";
-              gdm.enable = true;
-              };
+
             xkb.layout = "us";
             videoDrivers = [ "nvidia" ];
         };

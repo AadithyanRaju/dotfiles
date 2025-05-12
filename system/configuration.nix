@@ -11,7 +11,7 @@
       ./systemPackages.nix
       #./theme.nix
       ./users.nix
-      ./vmware.nix
+      #./vmware.nix
       ./xserver.nix
 
       # Do Not Touch
