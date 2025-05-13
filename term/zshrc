@@ -258,7 +258,7 @@ if [ -f /etc/zsh_command_not_found ]; then
 fi
 . ~/.dotfiles/term/mycom
 compinit
-
+configure_prompt
 
 # Created by `pipx` on 2024-03-14 04:13:40
 export PATH="$PATH:/home/aadithyan/.local/bin"

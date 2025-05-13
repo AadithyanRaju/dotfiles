@@ -40,6 +40,7 @@
 
     #Utilities
     android-tools #adb
+    anydesk       #Remote desktop
     findutils     #find
     inetutils     
     lsof          #List open files
@@ -69,5 +70,10 @@
     ffmpeg_6-full
     obs-studio
     vlc
+
+    #ZIP
+    unrar
+    p7zip
+    unzip
   ];
 }
