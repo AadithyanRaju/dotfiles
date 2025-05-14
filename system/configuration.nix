@@ -7,28 +7,29 @@
       ./docker.nix
       ./gaming.nix
       ./ld.nix
-      ./sys.nix
       ./systemPackages.nix
       #./theme.nix
-      ./users.nix
       ./vmware.nix
-      ./xserver.nix
 
       # Do Not Touch
       ./appimage.nix
       ./boot.nix
+      ./bluetooth.nix
       ./hardware-configuration.nix
       ./network.nix
       ./nvidia.nix
       ./settings.nix
       ./shell.nix
+      ./sound.nix
       ./time-locale.nix
+      ./users.nix
+      ./xserver.nix
     ];
 
   services = {
     gnome.gnome-keyring.enable = true;
     flatpak.enable = true;
-
+     # printing.enable = true;
    };
 
   # Configure keymap in X11
