@@ -19,6 +19,7 @@
       ./boot.nix
       ./hardware-configuration.nix
       ./network.nix
+      ./nvidia.nix
       ./settings.nix
       ./shell.nix
       ./time-locale.nix
