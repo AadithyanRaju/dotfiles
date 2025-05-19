@@ -4,6 +4,12 @@
   nixpkgs.config = {
     allowUnfree = true;
     #allowBroken = true;
+    allowUnfreePredicate = pkg: builtins.elem (builtins.parseDrvName pkg.name).name ["steam"];
+    permittedInsecurePackages = [
+      "openssl-1.1.1v"
+      "python-2.7.18.7"
+    ];
+
   };
   environment.systemPackages = with pkgs; [
     btop
@@ -27,7 +33,7 @@
     go
     jq
     libgcc	
-    #nodejs_23
+    nodejs_24
     (python3.withPackages (subpkgs: with subpkgs; [
         requests
     ]))
@@ -42,6 +48,7 @@
     android-tools #adb
     anydesk       #Remote desktop
     findutils     #find
+    flameshot
     inetutils     
     lsof          #List open files
     netcat-gnu	  #nc
@@ -57,6 +64,7 @@
 
     #Browser
     google-chrome
+    #opera
 
     #Editors
     neovim

@@ -4,12 +4,13 @@
     networking = {
         hostName = "OMEN"; 
         networkmanager.enable = true;
+        enableIPv6 = false;
         hosts = {
             "127.0.0.1" = [ "localhost" "OMEN" ];
             "::1" = [ "localhost" "OMEN" ];
         };
         firewall = {
-            enable = true;
+            enable = false;
             # allowedTCPPorts = [ 8000 ];
             # allowedUDPPorts = [ 8000 ];
         };

@@ -15,6 +15,7 @@
       ./appimage.nix
       ./boot.nix
       ./bluetooth.nix
+      ./fonts.nix
       ./hardware-configuration.nix
       ./network.nix
       ./nvidia.nix

@@ -3,8 +3,15 @@
 {
 
   # Gaming Support
-  programs.steam.enable = true;
-  programs.gamemode.enable = true; # Optimize system for gaming
+  programs.steam = {
+    enable = true;
+    remotePlay.openFirewall = true;
+    dedicatedServer.openFirewall = true;
+  };
+  programs = {
+    gamemode.enable = true; # Optimize system for gaming
+    gamescope.enable = true;
+  };
   programs.gnome-terminal.enable = true;
 
   # Vulkan, Wine, and Gaming Dependencies
@@ -25,13 +32,18 @@
   };
 
     # Lutris for Non-Steam Games
-    environment.systemPackages = with pkgs; [
-      heroic
-      lutris
-      gamemode
-      glxinfo
-      mesa
-      protonup-qt
-      steam
+  environment.systemPackages = with pkgs; [
+    heroic
+    lutris
+    gamemode
+    glxinfo
+    mesa
+    protonup-qt
+    steam
+  ];
+  (heroic.override {
+    extraPkgs = pkgs: [
+      pkgs.gamescope
     ];
+  })
 }
