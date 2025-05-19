@@ -33,7 +33,11 @@
 
     # Lutris for Non-Steam Games
   environment.systemPackages = with pkgs; [
-    heroic
+    (heroic.override {
+      extraPkgs = pkgs: [
+        pkgs.gamescope
+      ];
+    })
     lutris
     gamemode
     glxinfo
@@ -41,9 +45,5 @@
     protonup-qt
     steam
   ];
-  (heroic.override {
-    extraPkgs = pkgs: [
-      pkgs.gamescope
-    ];
-  })
+  
 }
