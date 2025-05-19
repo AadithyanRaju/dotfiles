@@ -4,13 +4,13 @@
     fonts = {
         packages = with pkgs; [
             noto-fonts
-            noto-fonts-cjk
+            noto-fonts-cjk-sans
             noto-fonts-emoji
             font-awesome
             source-han-sans
             source-han-sans-japanese
             source-han-serif-japanese
-            (nerdfonts.override {fonts = ["Meslo"];})
+            nerdfonts.meslo
         ];
         fontconfig = {
             enable = true;

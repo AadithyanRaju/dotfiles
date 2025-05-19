@@ -17,6 +17,7 @@
     htop
     gnome-tweaks
     libsForQt5.ktorrent
+    ollama
     openvpn
     vim 
     wget
@@ -27,12 +28,15 @@
     gh
 
     #Programming
+    ## C/C++
+    libgcc	
     gcc
-    ghc     #Haskell compiler
     gnumake
+    cmake
+    extra-cmake-modules
+    ghc     #Haskell compiler
     go
     jq
-    libgcc	
     nodejs_24
     (python3.withPackages (subpkgs: with subpkgs; [
         requests
@@ -52,6 +56,7 @@
     inetutils     
     lsof          #List open files
     netcat-gnu	  #nc
+    nix-index
     pciutils      #List PCI devices
     scrcpy        #Screen mirroring
     sticky        #Sticky notes
