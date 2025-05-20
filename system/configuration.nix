@@ -17,6 +17,7 @@
       ./bluetooth.nix
       #./fonts.nix
       ./hardware-configuration.nix
+      ./hyprland.nix
       ./network.nix
       ./nvidia.nix
       ./settings.nix
