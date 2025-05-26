@@ -1,6 +1,9 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.overlays = [
+    (import ./overlays/pygame-avx2.nix)
+  ];
   nixpkgs.config = {
     allowUnfree = true;
     #allowBroken = true;
@@ -33,13 +36,22 @@
     jq
     jdk8
     nodejs_24
-    (python3.withPackages (subpkgs: with subpkgs; [
-        requests
-        numpy
-        matplotlib
-        opencv4
-        pandas
+    (python3.withPackages (ps: with ps; let
+      pygame-avx2 = ps.pygame.overrideAttrs (oldAttrs: {
+        buildInputs = (oldAttrs.buildInputs or []) ++ [ pkgs.pkg-config ];
+        preBuild = ''
+          export PYGAME_DETECT_AVX2=1
+        '';
+      });
+    in [
+      requests
+      numpy
+      matplotlib
+      opencv4
+      pandas
+      pygame-avx2
     ]))
+
 
     #Penetration Testing
     binwalk
@@ -94,6 +106,7 @@
     ani-cli
     audacity
     ffmpeg_6-full
+    loupe
     obs-studio
     vlc
 
@@ -103,6 +116,7 @@
     unzip
 
     #Other Apps
-    ciscoPacketTracer8
+    #ciscoPacketTracer8
+    nautilus
   ];
 }
