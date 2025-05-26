@@ -1,0 +1,20 @@
+diff --git a/setup.py b/setup.py
+index 2a3b10b..3f4c114 100644
+--- a/setup.py
++++ b/setup.py
+@@ -1,6 +1,10 @@
+-import distutils.ccompiler
++import setuptools._distutils.ccompiler as ccompiler
+
+-def custom_spawn(cmd, search_path=True, verbose=False, dry_run=False):
+-    # replaces distutils.ccompiler.spawn
+-    ...
++def custom_spawn(cmd, search_path=True, verbose=False, dry_run=False):
++    import subprocess
++    if dry_run:
++        return
++    if verbose:
++        print(" ".join(cmd))
++    subprocess.check_call(cmd)
++
++ccompiler.spawn = custom_spawn

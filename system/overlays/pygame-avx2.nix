@@ -1,11 +1,12 @@
 self: super:
 
 let
-  pythonPackages = super.python311Packages; # or python3Packages if you're defaulting to 3.11
+  pythonPackages = super.python311Packages;
 in {
   python311Packages = pythonPackages // {
-    pygame = pythonPackages.pygame.overrideAttrs (oldAttrs: {
-      buildInputs = (oldAttrs.buildInputs or []) ++ [ super.pkg-config ];
+    pygame = pythonPackages.pygame.overrideAttrs (old: {
+      patches = (old.patches or []) ++ [ ./pygame-distutils-spawn-fix.patch ];
+      buildInputs = (old.buildInputs or []) ++ [ super.pkg-config ];
       preBuild = ''
         export PYGAME_DETECT_AVX2=1
       '';

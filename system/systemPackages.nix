@@ -36,7 +36,7 @@
     jq
     jdk8
     nodejs_24
-    (python3.withPackages (ps: with ps; let
+    (python311.withPackages (ps: with ps; let
       pygame-avx2 = ps.pygame.overrideAttrs (oldAttrs: {
         buildInputs = (oldAttrs.buildInputs or []) ++ [ pkgs.pkg-config ];
         preBuild = ''
