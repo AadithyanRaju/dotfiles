@@ -9,7 +9,7 @@
       ./ld.nix
       ./systemPackages.nix
       #./theme.nix
-      ./vmware.nix
+      #./vmware.nix
 
       # Do Not Touch
       ./appimage.nix

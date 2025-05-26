@@ -12,15 +12,9 @@
 
   };
   environment.systemPackages = with pkgs; [
-    btop
-    curl
-    htop
     gnome-tweaks
     libsForQt5.ktorrent
     ollama
-    openvpn
-    vim 
-    wget
 
     #Git
     git
@@ -37,13 +31,24 @@
     ghc     #Haskell compiler
     go
     jq
+    jdk8
     nodejs_24
     (python3.withPackages (subpkgs: with subpkgs; [
         requests
+        numpy
+        matplotlib
+        opencv4
+        pandas
     ]))
 
     #Penetration Testing
     binwalk
+    burpsuite
+    exif
+    exiftool
+    ghidra
+    hashcat
+    thc-hydra
     nmap
     pdfcrack
     wireshark-qt
@@ -51,16 +56,22 @@
     #Utilities
     android-tools #adb
     anydesk       #Remote desktop
+    btop
+    curl
     findutils     #find
     flameshot
+    gallery-dl
+    htop
     inetutils     
     lsof          #List open files
     netcat-gnu	  #nc
     nix-index
+    openvpn
     pciutils      #List PCI devices
     scrcpy        #Screen mirroring
     sticky        #Sticky notes
     tree          #List directory structure
+    wget
     zoxide        #Jump around directories
 
     #Communication
@@ -73,6 +84,7 @@
 
     #Editors
     neovim
+    vim 
     vscode
 
     #Office
@@ -80,6 +92,7 @@
 
     #Media
     ani-cli
+    audacity
     ffmpeg_6-full
     obs-studio
     vlc
@@ -88,5 +101,8 @@
     unrar
     p7zip
     unzip
+
+    #Other Apps
+    ciscoPacketTracer8
   ];
 }
