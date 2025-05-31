@@ -3,29 +3,29 @@
 {
   imports =
     [ 
-      #./cuda.nix
-      ./docker.nix
-      ./gaming.nix
-      ./ld.nix
-      ./systemPackages.nix
-      #./theme.nix
-      #./vmware.nix
+      #./common/cuda.nix
+      ./common/docker.nix
+      ./OMEN/gaming.nix
+      ./common/ld.nix
+      ./OMEN/systemPackages.nix
+      #./common/theme.nix
+      #./common/vmware.nix
 
       # Do Not Touch
-      ./appimage.nix
-      ./boot.nix
-      ./bluetooth.nix
-      #./fonts.nix
-      ./hardware-configuration.nix
-      ./hyprland.nix
-      ./network.nix
-      ./nvidia.nix
-      ./settings.nix
-      ./shell.nix
-      ./sound.nix
-      ./time-locale.nix
-      ./users.nix
-      ./xserver.nix
+      ./common/appimage.nix
+      ./common/boot.nix
+      ./common/bluetooth.nix
+      #./common/fonts.nix
+      ./OMEN/hardware-configuration.nix
+      ./common/hyprland.nix
+      ./OMEN/network.nix
+      ./OMEN/nvidia.nix
+      ./common/settings.nix
+      ./common/shell.nix
+      ./common/sound.nix
+      ./common/time-locale.nix
+      ./common/users.nix
+      ./common/xserver.nix
     ];
 
   services = {

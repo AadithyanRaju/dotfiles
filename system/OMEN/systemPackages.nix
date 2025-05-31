@@ -36,20 +36,13 @@
     jq
     jdk8
     nodejs_24
-    (python311.withPackages (ps: with ps; let
-      pygame-avx2 = ps.pygame.overrideAttrs (oldAttrs: {
-        buildInputs = (oldAttrs.buildInputs or []) ++ [ pkgs.pkg-config ];
-        preBuild = ''
-          export PYGAME_DETECT_AVX2=1
-        '';
-      });
-    in [
+    (python3.withPackages (subpkgs: with subpkgs; [
       requests
       numpy
       matplotlib
       opencv4
       pandas
-      pygame-avx2
+      pygame
     ]))
 
 
@@ -108,6 +101,7 @@
     ffmpeg_6-full
     loupe
     obs-studio
+    totem
     vlc
 
     #ZIP
@@ -116,7 +110,7 @@
     unzip
 
     #Other Apps
-    #ciscoPacketTracer8
+    ciscoPacketTracer8
     nautilus
   ];
 }
