@@ -72,7 +72,7 @@ sysup(){
   cd - > /dev/null
 }
 homeup(){
-  home-manager switch -f /home/aadithyan/.dotfiles/homemanager/home.nix
+  home-manager switch --flake /home/aadithyan/.dotfiles
 }
 
 
