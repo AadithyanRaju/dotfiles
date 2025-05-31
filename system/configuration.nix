@@ -25,6 +25,7 @@
       ./common/sound.nix
       ./common/time-locale.nix
       ./common/users.nix
+      ./common/virtualbox.nix
       ./common/xserver.nix
     ];
 
