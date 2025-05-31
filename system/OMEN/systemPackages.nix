@@ -2,7 +2,7 @@
 
 {
   nixpkgs.overlays = [
-    (import ./overlays/pygame-avx2.nix)
+    (import ../overlays/pygame-avx2.nix)
   ];
   nixpkgs.config = {
     allowUnfree = true;
