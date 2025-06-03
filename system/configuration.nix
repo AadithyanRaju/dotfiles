@@ -9,7 +9,9 @@
       ./common/ld.nix
       ./OMEN/systemPackages.nix
       #./common/theme.nix
+      #./common/virtualbox.nix
       #./common/vmware.nix
+      ./commom/kvm.nix
 
       # Do Not Touch
       ./common/appimage.nix
@@ -25,7 +27,6 @@
       ./common/sound.nix
       ./common/time-locale.nix
       ./common/users.nix
-      ./common/virtualbox.nix
       ./common/xserver.nix
     ];
 

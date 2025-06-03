@@ -66,6 +66,7 @@
     findutils     #find
     flameshot
     gallery-dl
+    gparted
     htop
     inetutils     
     lsof          #List open files
@@ -110,7 +111,11 @@
     unzip
 
     #Other Apps
+    android-studio
     ciscoPacketTracer8
     nautilus
+
+    #
+    libusb1
   ];
 }

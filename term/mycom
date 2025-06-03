@@ -17,28 +17,24 @@ alias mine='minecraft; exit'
 alias python='python3'
 alias scr='scrcpy -Sw --power-off-on-close'
 alias botim='~/Tools/Botim*.AppImage'
-alias server='ssh aws'
 
 # Anime
-alias anime-conf='bash $HOME/Scripts/animdl_conf.sh'
-anime-stream(){
-    if [ $# -eq 2 ];then
-        python3 -m animdl stream $1 -r $2
-    elif [ $# -eq 1 ];then
-        python3 -m animdl stream $1
-    fi
-}
+#alias anime-conf='bash $HOME/Scripts/animdl_conf.sh'
+#anime-stream(){
+#    if [ $# -eq 2 ];then
+#        python3 -m animdl stream $1 -r $2
+#    elif [ $# -eq 1 ];then
+#        python3 -m animdl stream $1
+#    fi
+#}
 
 # FireWall
-alias fd='sudo ufw disable'
-alias fe='sudo ufw enable'
-alias fs='sudo ufw status'
-
-# Github
-alias gitup='bash $HOME/Scripts/gitup.sh'
+#alias fd='sudo ufw disable'
+#alias fe='sudo ufw enable'
+#alias fs='sudo ufw status'
 
 #Arch-Clean
-alias clean='bash $HOME/Scripts/clean.sh'
+#alias clean='bash $HOME/Scripts/clean.sh'
 
 
 # Kali Bluetooth
@@ -72,7 +68,7 @@ sysup(){
   cd - > /dev/null
 }
 homeup(){
-  home-manager switch --flake /home/aadithyan/.dotfiles
+  home-manager switch --flake /home/aadithyan/.dotfiles#aadithyan
 }
 
 
