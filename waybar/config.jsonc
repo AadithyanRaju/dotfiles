@@ -1,0 +1,41 @@
+{
+    "include":[
+        "$HOME/.config/waybar/Modules",
+        "$HOME/.config/waybar/ModulesWorkspaces",
+        "$HOME/.config/waybar/ModulesCustom",
+        "$HOME/.config/waybar/ModulesGroups",
+        "$HOME/.config/waybar/UserModules"
+    ],
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    //"height": 24, // Waybar height (to be removed for auto height)
+    "exclusive": true,
+    "passthrough":false,
+    "spacing": 4, // Gaps between modules (4px)
+    "margin-left": 6,
+    "margin-right": 6,
+    "margin-top": 2,
+    // Choose the order of the modules
+    "modules-left": [
+        "hyprland/workspaces",
+        //"hyprland/mode"//,
+        //"sway/scratchpad",
+        //"custom/media"
+        "idle_inhibitor",
+	    "cpu",
+        "memory",
+        "tray",
+        "mpris"
+    ],
+    "modules-center": [
+        "clock#2",
+	    "group/notify"
+	],
+    "modules-right": [
+        "hyprland/window",
+        "network",
+        "battery",
+        "group/audio", 
+        "custom/power"
+    ]
+}

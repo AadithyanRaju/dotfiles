@@ -8,5 +8,6 @@
     # '';
     ".zshrc".source = ../term/zshrc;
     ".config/hypr".source = ../hypr;
+    ".config/waybar".source = ../waybar;
   };
 }
