@@ -35,6 +35,7 @@
     go
     jq
     jdk8
+    nasm       #Asm
     nodejs_24
     (python3.withPackages (subpkgs: with subpkgs; [
       requests

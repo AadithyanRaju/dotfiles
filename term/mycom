@@ -55,15 +55,15 @@ alias qnix='nix-env -q'
 #export BROWSER='google-chrome-stable'
 #export NIXPKGS_ALLOW_UNFREE=1
 
-alias up='yay | tee ~/log/uplog-$(date +%d-%m-%Y-%H:%M:%S).log'
-alias upg='sudo pacman -Syyu --noconfirm | tee ~/log/upglog-$(date +%d-%m-%Y-%H:%M:%S).log'
-alias i='sudo pacman -S --noconfirm'
+#alias up='yay | tee ~/log/uplog-$(date +%d-%m-%Y-%H:%M:%S).log'
+#alias upg='sudo pacman -Syyu --noconfirm | tee ~/log/upglog-$(date +%d-%m-%Y-%H:%M:%S).log'
+#alias i='sudo pacman -S --noconfirm'
 
 alias nso='nix --extra-experimental-features nix-command store optimise'
 alias nclean='nix-collect-garbage -d'
 sysup(){
   cd /home/aadithyan/.dotfiles
-  nix flake update
+  #nix flake update
   sudo nixos-rebuild switch --flake /home/aadithyan/.dotfiles
   cd - > /dev/null
 }

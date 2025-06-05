@@ -1,5 +1,11 @@
+{ config, pkgs, ... }:
 {
-  virtualisation.libvirtd.enable = true;
+  virtualisation.libvirtd = {
+    enable = true;
+    qemu.runAsRoot = false;
+  };
+  virtualisation.spiceUSBRedirection.enable = true;
+
 
   users.users.aadithyan.extraGroups = [ "libvirtd" "kvm" ]; 
   environment.systemPackages = with pkgs; [
@@ -10,4 +16,16 @@
     bridge-utils
     libvirt
   ];
+
+  systemd.services.libvirtd.wantedBy = [ "multi-user.target" ];
+  boot.kernelModules = [ "kvm_amd" "kvm" ];
+
+  environment.etc."polkit-1/rules.d/50-libvirt.rules".text = ''
+    polkit.addRule(function(action, subject) {
+      if (action.id == "org.libvirt.unix.manage" &&
+          subject.isInGroup("libvirtd")) {
+        return polkit.Result.YES;
+      }
+    });
+  '';
 }

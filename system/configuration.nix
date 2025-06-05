@@ -11,7 +11,7 @@
       #./common/theme.nix
       #./common/virtualbox.nix
       #./common/vmware.nix
-      ./commom/kvm.nix
+      ./common/kvm.nix
 
       # Do Not Touch
       ./common/appimage.nix

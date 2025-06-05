@@ -7,5 +7,6 @@
     #   org.gradle.daemon.idletimeout=3600000
     # '';
     ".zshrc".source = ../term/zshrc;
+    ".config/hypr".source = ../hypr;
   };
 }

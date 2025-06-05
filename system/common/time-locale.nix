@@ -2,7 +2,8 @@
 
 {
   time = {
-    timeZone = "Asia/Kolkata";
+    #timeZone = "Asia/Kolkata";
+    timeZone = "Asia/Dubai";
     hardwareClockInLocalTime = true;
   };
   
