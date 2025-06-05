@@ -68,7 +68,7 @@ sysup(){
   cd - > /dev/null
 }
 homeup(){
-  home-manager switch --flake /home/aadithyan/.dotfiles#aadithyan
+  nix run github:nix-community/home-manager -- switch --flake /home/aadithyan/.dotfiles#aadithyan --impure
 }
 
 

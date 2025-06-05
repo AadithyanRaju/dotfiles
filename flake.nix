@@ -9,14 +9,6 @@
             url = "github:nix-community/home-manager/master";
             inputs.nixpkgs.follows = "nixpkgs";
         };
-        # hyprland = {
-        #     url = "github:hyprwm/Hyprland";
-        #     inputs.nixpkgs.follows = "nixpkgs";
-        # };
-        # hyprland-plugins = {
-        #     url = "github:hyprwm/hyprland-plugins";
-        #     inputs.hyprland.follows = "hyprland";
-        # };
     };
 
     outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
@@ -45,6 +37,9 @@
                 modules = [
                   ./homemanager/home.nix
                 ];
+                extraSpecialArgs = {
+                    dotfilesPath = "/home/aadithyan/.dotfiles";  
+                };
             };
         };
     };

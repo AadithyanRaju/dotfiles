@@ -1,13 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, dotfilesPath, ... }:
+
 {
   home.file = {
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
-    ".zshrc".source = ../term/zshrc;
-    ".config/hypr".source = ../hypr;
-    ".config/waybar".source = ../waybar;
+    ".zshrc".source = builtins.path { path = "${dotfilesPath}/term/zshrc"; };
+    ".config/hypr".source = builtins.path { path = "${dotfilesPath}/hypr"; };
+    ".config/waybar".source = builtins.path { path = "${dotfilesPath}/waybar"; };
   };
 }
