@@ -21,6 +21,7 @@
       ./OMEN/hardware-configuration.nix
       ./common/hyprland.nix
       ./OMEN/network.nix
+      #./common/network-cache.nix
       ./OMEN/nvidia.nix
       ./common/settings.nix
       ./common/shell.nix

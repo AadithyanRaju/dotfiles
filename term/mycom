@@ -64,7 +64,7 @@ alias nclean='nix-collect-garbage -d'
 sysup(){
   cd /home/aadithyan/.dotfiles
   #nix flake update
-  sudo nixos-rebuild switch --flake /home/aadithyan/.dotfiles
+  sudo nixos-rebuild switch --flake /home/aadithyan/.dotfiles --impure
   cd - > /dev/null
 }
 homeup(){
