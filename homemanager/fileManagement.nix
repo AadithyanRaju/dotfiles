@@ -1,9 +1,9 @@
-{ config, pkgs, dotfilesPath, ... }:
+{ config, pkgs, ... }:
 
 {
   home.file = {
-    ".zshrc".source = builtins.path { path = "${dotfilesPath}/term/zshrc"; };
-    ".config/hypr".source = builtins.path { path = "${dotfilesPath}/hypr"; };
-    ".config/waybar".source = builtins.path { path = "${dotfilesPath}/waybar"; };
+    ".zshrc".source = builtins.path { path = "/home/aadithyan/.dotfiles/term/zshrc"; };
+    ".config/hypr".source = builtins.path { path = "/home/aadithyan/.dotfiles/hypr"; };
+    ".config/waybar".source = builtins.path { path = "/home/aadithyan/.dotfiles/waybar"; };
   };
 }
