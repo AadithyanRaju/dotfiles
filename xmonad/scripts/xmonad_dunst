@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# xmonad directory
+DIR="$HOME/.config/xmonad"
+
+# Launch dunst daemon
+if [[ `pidof dunst` ]]; then
+	pkill dunst
+fi
+
+dunst -config "$DIR"/dunstrc &

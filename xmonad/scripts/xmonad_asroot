@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# xmonad directory
+DIR="$HOME/.config/xmonad"
+
+# rofi sudo askpass helper
+export SUDO_ASKPASS="$DIR"/scripts/rofi_askpass
+
+# execute the application
+sudo -A $1

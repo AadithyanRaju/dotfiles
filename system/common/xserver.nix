@@ -17,13 +17,14 @@
             #  enable = true;
             #  disableWhileTyping = true;
             #};
-            #windowManager = {
-            #  xmonad = {
-            #    enable = true;
-            #    enableContribAndExtras = true;
-            #    config = /home/aadithyan/.config/xmonad/xmonad.hs;
-            #  };
-            #};
+            windowManager = {
+              xmonad = {
+                enable = true;
+                enableContribAndExtras = true;
+                config = /home/aadithyan/.dotfiles/xmonad/xmonad.hs;
+              };
+            };
+
 
             xkb.layout = "us";
             videoDrivers = [ "nvidia" ];

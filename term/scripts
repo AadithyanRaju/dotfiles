@@ -1,3 +1,4 @@
 #!/bin/bash
 alias setWallpaper='bash $HOME/.dotfiles/Scripts/xmonad_wallpaper.sh'
 alias ssdHealth='bash $HOME/.dotfiles/Scripts/ssd-health.sh'
+alias wifi='bash $HOME/.dotfiles/Scripts/wifi.sh'
