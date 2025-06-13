@@ -25,7 +25,7 @@ import XMonad.Actions.NoBorders
 
 -- ## Startup hook ## ---------------------------------------------------------------
 myStartupHook = do
-    spawnOnce "bash ~/.config/xmonad/scripts/xmonad_autostart"
+    spawnOnce "bash ~/.dotfiles/xmonad/scripts/xmonad_autostart"
 
 -- ## Settings ## -------------------------------------------------------------------
 
@@ -56,7 +56,7 @@ myWorkspaces = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
 
 -- Terminal
 myTerminal :: String
-myTerminal = "~/.config/xmonad/scripts/xmonad_term"
+myTerminal = "~/.dotfiles/xmonad/scripts/xmonad_term"
 
 -- Apps
 myFileManager    = "thunar"
@@ -67,11 +67,11 @@ myWebBrowser     = "opera" --"google-chrome-stable"
 myCLIFileManager = myTerminal ++ " -e ranger"
 myCLITextEditor  = myTerminal ++ " -e vim"
 myCLIMonitor     = myTerminal ++ " -e btop"
-myCLIMusic       = "~/.config/xmonad/scripts/xmonad_music"
+myCLIMusic       = "~/.dotfiles/xmonad/scripts/xmonad_music"
 
 -- Rofi Menus
 myRofiPath :: String
-myRofiPath = "~/.config/xmonad/scripts/"
+myRofiPath = "~/.dotfiles/xmonad/scripts/"
 myRofi_NETWORK   = myRofiPath ++ "network_menu"
 myRofi_ROOT      = myRofiPath ++ "rofi_asroot"
 myRofi_BLUETOOTH = myRofiPath ++ "rofi_bluetooth"
@@ -83,12 +83,12 @@ myRofi_SHOTS     = myRofiPath ++ "rofi_screenshot"
 myRofi_WINDOW    = myRofiPath ++ "rofi_windows"
 
 -- Functions Keys
-myVolume         = "~/.config/xmonad/scripts/xmonad_volume"
-myBrightness     = "~/.config/xmonad/scripts/xmonad_brightness"
-myScreenshot     = "~/.config/xmonad/scripts/xmonad_screenshot"
+myVolume         = "~/.dotfiles/xmonad/scripts/xmonad_volume"
+myBrightness     = "~/.dotfiles/xmonad/scripts/xmonad_brightness"
+myScreenshot     = "~/.dotfiles/xmonad/scripts/xmonad_screenshot"
 
 -- Misc
-myColorPicker    = "~/.config/xmonad/scripts/xmonad_colorpicker"
+myColorPicker    = "~/.dotfiles/xmonad/scripts/xmonad_colorpicker"
 myLockScreen     = "betterlockscreen --lock"
 
 -- ## Key Bindings ## -------------------------------------------------------------------

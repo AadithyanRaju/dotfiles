@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Import Current Theme
-DIR="$HOME/.config/xmonad"
+DIR="$HOME/.dotfiles/xmonad"
 RASI="$DIR/theme/rofi/music.rasi"
 
 # Theme Elements

@@ -3,7 +3,7 @@
 ## launch alacritty with xmonad config
 
 # xmonad directory
-DIR="$HOME/.config/xmonad"
+DIR="$HOME/.dotfiles/xmonad"
 CONFIG="$DIR/alacritty/alacritty.toml"
 
 if [ "$1" == "--float" ]; then

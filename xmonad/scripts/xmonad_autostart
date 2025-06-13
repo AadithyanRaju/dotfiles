@@ -2,7 +2,7 @@
 ## Autostart Programs
 
 # xmonad dir
-xdir="$HOME/.config/xmonad"
+xdir="$HOME/.dotfiles/xmonad"
 
 # Export desktop session
 export XDG_CURRENT_DESKTOP='xmonad'

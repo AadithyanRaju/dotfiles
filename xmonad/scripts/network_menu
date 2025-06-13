@@ -9,7 +9,7 @@ https://wiki.archlinux.org/index.php/NetworkManager#Set_up_PolicyKit_permissions
 OR running the script as root
 
 Add dmenu options and default terminal if desired to
-~/.config/xmonad/theme/networkmenu_config.ini
+~/.dotfiles/xmonad/theme/networkmenu_config.ini
 
 """
 import pathlib
@@ -35,8 +35,8 @@ ENV = os.environ.copy()
 ENV['LC_ALL'] = 'C'
 ENC = locale.getpreferredencoding()
 
-CONF = configparser.ConfigParser()
-CONF.read(expanduser("~/.config/xmonad/theme/networkmenu_config.ini"))
+CONF = configparser.dotfilesParser()
+CONF.read(expanduser("~/.dotfiles/xmonad/theme/networkmenu_config.ini"))
 
 
 def cli_args():
