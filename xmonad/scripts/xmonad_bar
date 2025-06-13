@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-# xmonad directory
-DIR="$HOME/.dotfiles/xmonad"
-
-# launch polybar
-bash "$DIR"/theme/polybar.sh

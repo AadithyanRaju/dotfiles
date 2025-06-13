@@ -3,6 +3,7 @@
 {
     services = {
         displayManager = {
+          defaultSession = "hyprland";
             #gdm.enable = true;
             sddm.enable = true;
         };
@@ -17,13 +18,6 @@
             #  enable = true;
             #  disableWhileTyping = true;
             #};
-            windowManager = {
-              xmonad = {
-                enable = true;
-                enableContribAndExtras = true;
-                config = /home/aadithyan/.dotfiles/xmonad/xmonad.hs;
-              };
-            };
 
 
             xkb.layout = "us";
