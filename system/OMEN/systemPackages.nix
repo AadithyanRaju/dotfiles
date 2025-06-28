@@ -57,6 +57,7 @@
     thc-hydra
     nmap
     pdfcrack
+    wifite2
     wireshark-qt
 
     #Utilities
@@ -90,6 +91,7 @@
     #opera
 
     #Editors
+    jetbrains.idea-ultimate
     neovim
     vim 
     vscode
