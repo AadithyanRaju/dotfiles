@@ -1,9 +1,10 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  home.file = {
-    ".zshrc".source = builtins.path { path = "/home/aadithyan/.dotfiles/term/zshrc"; };
-    ".config/hypr".source = builtins.path { path = "/home/aadithyan/.dotfiles/hypr"; };
-    ".config/waybar".source = builtins.path { path = "/home/aadithyan/.dotfiles/waybar"; };
-  };
+  home.activation.dotfileLinks = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p $HOME/.config
+    ln -snf /home/aadithyan/.dotfiles/term/zshrc $HOME/.zshrc
+    ln -snf /home/aadithyan/.dotfiles/hypr $HOME/.config/hypr
+    ln -snf /home/aadithyan/.dotfiles/waybar $HOME/.config/waybar
+  '';
 }

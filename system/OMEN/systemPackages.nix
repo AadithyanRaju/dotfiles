@@ -16,8 +16,8 @@
   };
   environment.systemPackages = with pkgs; [
     gnome-tweaks
-    libsForQt5.ktorrent
-    ollama
+    #libsForQt5.ktorrent
+    #ollama
 
     #Git
     git
@@ -52,12 +52,12 @@
     burpsuite
     exif
     exiftool
-    ghidra
+    #ghidra
     hashcat
-    thc-hydra
+    #thc-hydra
     nmap
     pdfcrack
-    wifite2
+    #wifite2
     wireshark-qt
 
     #Utilities
@@ -91,7 +91,7 @@
     #opera
 
     #Editors
-    jetbrains.idea-ultimate
+    #jetbrains.idea-ultimate
     neovim
     vim 
     vscode
@@ -114,9 +114,10 @@
     unzip
 
     #Other Apps
-    android-studio
-    ciscoPacketTracer8
+    #android-studio
+    #ciscoPacketTracer8
     nautilus
+    xfce.thunar
 
     #
     libusb1

@@ -14,19 +14,22 @@
   boot.extraModulePackages = [ ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/64191982-d74d-48ee-bf36-8432e5632119";
+    { device = "/dev/disk/by-uuid/00bee723-3756-436b-834a-59afbe0491c1";
+      fsType = "ext4";
+    };
+  
+  fileSystems."/home"=
+    { device = "/dev/disk/by-uuid/9af6e9d9-dbee-4a1b-a71d-51b0797d0a85";
       fsType = "ext4";
     };
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/C99C-F872";
+    { device = "/dev/disk/by-uuid/AFF4-3E76";
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
 
-  swapDevices =
-    [ { device = "/dev/disk/by-uuid/4f0b5755-5025-419a-813e-822fd0c0c963"; }
-    ];
+  swapDevices = [ ];
 
   networking.useDHCP = lib.mkDefault true;
   # networking.interfaces.eno1.useDHCP = lib.mkDefault true;

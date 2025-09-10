@@ -2,9 +2,10 @@
 
 {
   imports = [
-    ./packages.nix
-    ./git.nix
+    ./candyIcons.nix
     ./fileManagement.nix
+    ./git.nix
+    ./packages.nix
   ];
   
   home = {
