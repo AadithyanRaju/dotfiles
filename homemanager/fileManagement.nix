@@ -7,4 +7,5 @@
     ln -snf /home/aadithyan/.dotfiles/hypr $HOME/.config/hypr
     ln -snf /home/aadithyan/.dotfiles/waybar $HOME/.config/waybar
   '';
+  
 }

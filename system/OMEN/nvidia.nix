@@ -1,13 +1,13 @@
 { config, pkgs, ... }:
 
 {
-  # Enable Nvidia drivers (Proprietary)
+  hardware.graphics.enable = true;
   hardware.nvidia = {
+    open = false;  
+    package = config.boot.kernelPackages.nvidiaPackages.latest; 
     modesetting.enable = true;
     powerManagement.enable = true;
-    open = false;  
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.latest; 
     prime = {
       offload.enable = true;
       offload.enableOffloadCmd = true;
@@ -15,4 +15,8 @@
       nvidiaBusId = "PCI:1:0:0";  # Adjust based on your output
     };
   };
+  services.xserver.videoDrivers = [
+    "amdgpu"
+    "nvidia"
+  ];
 }

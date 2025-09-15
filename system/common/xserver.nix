@@ -21,7 +21,6 @@
 
 
             xkb.layout = "us";
-            videoDrivers = [ "nvidia" ];
         };
    };
 }

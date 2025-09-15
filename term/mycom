@@ -11,8 +11,16 @@ alias off='shutdown now'
 alias re='reboot'
 
 # Applications Launcher
-alias burp='bash $HOME/.BURP/burp2'
-alias minecraft='java -jar $HOME/Tools/TLauncher.jar'
+burp() {
+  cd $HOME/.BURP
+  nix-shell
+  cd - > /dev/null
+}
+minecraft(){
+  cd $HOME/.dotfiles/Scripts/Minecraft
+  nix develop
+  cd - > /dev/null
+}
 alias mine='minecraft; exit'
 alias python='python3'
 alias scr='scrcpy -Sw --power-off-on-close'
