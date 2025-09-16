@@ -87,6 +87,7 @@
     discord
 
     #Browser
+    firefox
     google-chrome
     #opera
 

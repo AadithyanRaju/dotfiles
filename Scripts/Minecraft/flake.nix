@@ -1,5 +1,5 @@
 {
-  description = "TLauncher devShell for NixOS + Hyprland";
+  description = "DevShell for running TLauncher on NixOS";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -11,36 +11,23 @@
       pkgs = import nixpkgs { inherit system; };
     in {
       devShells.${system}.default = pkgs.mkShell {
-        buildInputs = [
-          pkgs.openjdk
-
-          # X11 dependencies for Java AWT/Swing
-          pkgs.xorg.libX11
-          pkgs.xorg.libXext
-          pkgs.xorg.libXtst
-          pkgs.xorg.libXi
-          pkgs.xorg.libXrender
-          pkgs.xorg.libXrandr
-          pkgs.xorg.libXcursor
-          pkgs.xorg.libXinerama
-
-          # Fonts + GTK for Java GUI rendering
-          pkgs.freetype
-          pkgs.fontconfig
-          pkgs.gtk3
-          pkgs.glib
+        buildInputs = with pkgs; [
+          jdk21      # Java runtime
+          libx11
+          libxext
+          libxrender
+          xorg.libXi
+          libxrandr
+          fontconfig
+          freetype
+          zlib
         ];
 
         shellHook = ''
-          if [ -f TLauncher.jar ]; then
-              echo "Running TLauncher with system JDK..."
-              JAVA_HOME=${pkgs.openjdk}
-              PATH=$JAVA_HOME/bin:$PATH
-              exec java -jar TLauncher.jar
-          else
-              echo "TLauncher.jar not found in current directory."
-          fi
-          exit
+          export _JAVA_AWT_WM_NONREPARENTING=1
+          export GDK_BACKEND=x11
+          echo " TLauncher devShell ready. Run with:"
+          echo "    java -jar /path/to/TLauncher.jar"
         '';
       };
     };
