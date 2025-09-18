@@ -10,9 +10,12 @@
     enable = true;
 
     iconTheme = {
-      name = "Candy";
+      name = "Candy-icons";
       package = pkgs.candy-icons;
     };
+  };
+  home.sessionVariables = {
+    GTK_ICON_THEME = "Candy-icons";
   };
   home.file = {
     # # You can also set the file content immediately.

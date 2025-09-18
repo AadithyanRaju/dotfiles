@@ -1,10 +1,10 @@
 {
     "include":[
-        "$HOME/.dotfiles/waybar/Modules",
-        "$HOME/.dotfiles/waybar/ModulesWorkspaces",
-        "$HOME/.dotfiles/waybar/ModulesCustom",
-        "$HOME/.dotfiles/waybar/ModulesGroups",
-        "$HOME/.dotfiles/waybar/UserModules"
+        "$HOME/.dotfiles/config/waybar/Modules",
+        "$HOME/.dotfiles/config/waybar/ModulesWorkspaces",
+        "$HOME/.dotfiles/config/waybar/ModulesCustom",
+        "$HOME/.dotfiles/config/waybar/ModulesGroups",
+        "$HOME/.dotfiles/config/waybar/UserModules"
     ],
     "layer": "top", // Waybar at top layer
     "position": "top", // Waybar position (top|bottom|left|right)
