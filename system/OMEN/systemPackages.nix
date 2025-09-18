@@ -120,9 +120,11 @@
     nautilus
     xfce.thunar
     ranger
-    cliphist
 
-    #
+    #Clipboard managers
+    cliphist wl-clipboard
+
+    #USB
     libusb1
   ];
 }
