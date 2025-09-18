@@ -6,6 +6,7 @@
     ./fileManagement.nix
     ./git.nix
     ./packages.nix
+    ./services.nix
   ];
   
   home = {
