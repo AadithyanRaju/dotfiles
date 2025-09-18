@@ -13,6 +13,7 @@ print_help(){
     printf '\t-l, --list     : List WiFi Networks\n'
     printf '\t-r, --rescan   : Rescan WiFi\n'
     printf '\t-R, --reconnect: Reconnect WiFi\n'
+    printf '\t-c, --connect  : Connect to WiFi\n'
 
 
 }
@@ -37,6 +38,43 @@ parse_commandline(){
             -R|--reconnect)
                 nmcli device disconnect wlo1
                 nmcli device connect wlo1
+                ;;
+            -c|--connect)
+                # Get list of SSID and SECURITY
+                mapfile -t wifi_list < <(nmcli -t -f SSID,SECURITY device wifi list | grep -v '^$')
+                if [ ${#wifi_list[@]} -eq 0 ]; then
+                    echo "No WiFi networks found."
+                    exit 1
+                fi
+
+                echo "Available WiFi Networks:"
+                ssids=()
+                securities=()
+                for i in "${!wifi_list[@]}"; do
+                    ssid=$(echo "${wifi_list[$i]}" | cut -d: -f1)
+                    sec=$(echo "${wifi_list[$i]}" | cut -d: -f2)
+                    ssids+=("$ssid")
+                    securities+=("$sec")
+                    printf "%d) %s [%s]\n" $((i+1)) "$ssid" "$sec"
+                done
+
+                read -p "Select network (1-${#ssids[@]}): " choice
+                if ! [[ "$choice" =~ ^[0-9]+$ ]] || [ "$choice" -lt 1 ] || [ "$choice" -gt "${#ssids[@]}" ]; then
+                    echo "Invalid selection."
+                    exit 1
+                fi
+
+                selected_ssid="${ssids[$((choice-1))]}"
+                selected_sec="${securities[$((choice-1))]}"
+
+                if [ -n "$selected_sec" ] && [ "$selected_sec" != "--" ]; then
+                    read -s -p "Enter password for '$selected_ssid': " wifi_pass
+                    echo
+                    nmcli device wifi connect "$selected_ssid" password "$wifi_pass"
+                else
+                    nmcli device wifi connect "$selected_ssid"
+                fi
+                exit 0
                 ;;
             *)
                 _last_positional="$1"

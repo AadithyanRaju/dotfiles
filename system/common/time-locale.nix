@@ -6,6 +6,16 @@
     #timeZone = "Asia/Dubai";
     hardwareClockInLocalTime = true;
   };
+  services.timesyncd.enable = true;
+
+  services.timesyncd.servers = [
+    "time.google.com"
+    "time1.google.com"
+    "time2.google.com"
+    "time3.google.com"
+    "time4.google.com"
+  ];
+
   
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
