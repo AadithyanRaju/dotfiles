@@ -119,6 +119,8 @@
     #ciscoPacketTracer8
     nautilus
     xfce.thunar
+    ranger
+    cliphist
 
     #
     libusb1

@@ -1,0 +1,10 @@
+[Unit]
+Description=Cliphist Clipboard Manager
+After=graphical.target
+
+[Service]
+ExecStart=wl-paste --watch cliphist store
+Restart=always
+
+[Install]
+WantedBy=default.target

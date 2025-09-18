@@ -7,6 +7,8 @@
     ln -snf /home/aadithyan/.dotfiles/config/hypr $HOME/.config/hypr
     ln -snf /home/aadithyan/.dotfiles/config/waybar $HOME/.config/waybar
     ln -snf /home/aadithyan/.dotfiles/config/wofi $HOME/.config/wofi
+    ln -snf /home/aadithyan/.dotfiles/config/dunst $HOME/.config/dunst
+    ln -snf /home/aadithyan/.dotfiles/config/systemd $HOME/.config/systemd
   '';
   
 }
