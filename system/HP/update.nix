@@ -2,10 +2,10 @@ let
   updateDotfiles = pkgs.writeShellScriptBin "update-dotfiles" ''
     set -euo pipefail
 
-    # Safe defaults (overridden if env vars exist)
-    : "${REPO_DIR:=/home/aadithyan/.dotfiles}"
-    : "${BRANCH:=main}"
-    : "${REMOTE:=origin}"
+    # Safe defaults (if env vars unset or empty)
+    REPO_DIR="${REPO_DIR:-/home/aadithyan/.dotfiles}"
+    BRANCH="${BRANCH:-main}"
+    REMOTE="${REMOTE:-origin}"
 
     # Use absolute paths to avoid PATH issues in systemd
     GIT=/run/current-system/sw/bin/git
@@ -41,7 +41,6 @@ in
     };
   };
 
-  # Timer to run every hour
   systemd.timers.update-dotfiles = {
     description = "Hourly dotfiles update";
     wantedBy = [ "timers.target" ];
