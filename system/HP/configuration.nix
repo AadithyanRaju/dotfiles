@@ -8,6 +8,7 @@
       ../common/ld.nix
       ./systemPackages.nix
       ./reconnect.nix
+      ./update.nix
       #./common/theme.nix
       #./common/virtualbox.nix
       #./common/vmware.nix
@@ -42,6 +43,15 @@
   services.logind.lidSwitch = "ignore";
   services.logind.lidSwitchDocked = "ignore";
   services.logind.lidSwitchExternalPower = "ignore";
+  security.sudo.extraRules = [
+    {
+      users = [ "aadithyan" ];
+      commands = [
+        { command = "${pkgs.nixos-rebuild}/bin/nixos-rebuild"; options = [ "NOPASSWD" ]; }
+      ];
+    }
+  ];
+
 
   # Configure keymap in X11
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
