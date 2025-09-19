@@ -6,8 +6,9 @@
       #./common/cuda.nix
       ../common/docker.nix
       ../common/ld.nix
-      ./systemPackages.nix
+      ./jellyfin.nix
       ./reconnect.nix
+      ./systemPackages.nix
       ./update.nix
       #./common/theme.nix
       #./common/virtualbox.nix
