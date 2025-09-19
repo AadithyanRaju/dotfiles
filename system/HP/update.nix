@@ -1,3 +1,5 @@
+{ config, pkgs, ... }:
+
 let
   updateDotfiles = pkgs.writeShellScriptBin "update-dotfiles" ''
     set -euo pipefail
