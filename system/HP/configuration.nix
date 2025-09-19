@@ -7,6 +7,7 @@
       ../common/docker.nix
       ../common/ld.nix
       ./systemPackages.nix
+      ./reconnect.nix
       #./common/theme.nix
       #./common/virtualbox.nix
       #./common/vmware.nix
@@ -38,6 +39,9 @@
     ];
    };
   
+  services.logind.lidSwitch = "ignore";
+  services.logind.lidSwitchDocked = "ignore";
+  services.logind.lidSwitchExternalPower = "ignore";
 
   # Configure keymap in X11
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
