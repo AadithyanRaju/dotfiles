@@ -106,6 +106,7 @@
     ffmpeg_6-full
     loupe
     obs-studio
+    spotify
     totem
     vlc
 

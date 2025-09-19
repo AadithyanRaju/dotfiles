@@ -21,7 +21,7 @@
             OMEN = lib.nixosSystem {
                 inherit system;
                 modules = [
-                  ./system/configuration.nix
+                  ./system/OMEN/configuration.nix
                   home-manager.nixosModules.home-manager
                   {
                     home-manager.useGlobalPkgs = true;
