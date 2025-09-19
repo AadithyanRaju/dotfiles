@@ -1,2 +1,3 @@
 *.lock
 Scripts/Minecraft/TLauncher.jar
+config/systemd/user
