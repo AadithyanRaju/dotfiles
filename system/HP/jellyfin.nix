@@ -4,11 +4,12 @@
     virtualisation.oci-containers.containers.jellyfin = {
         image = "jellyfin/jellyfin:latest";
         autoStart = true;
-        extraOptions = [ "--network=host" ];
+        extraOptions = [ "--network=host" "--device=/dev/dri" ];
         volumes = [
           "/data/Jellyfin/config:/config"
           "/data/Jellyfin/cache:/cache"
           "/data/Jellyfin/media:/media"
+          "/dev/dri:/dev/dri"
         ];
     };      
 
