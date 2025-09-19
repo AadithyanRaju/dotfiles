@@ -23,7 +23,19 @@
       fsType = "vfat";
       options = [ "fmask=0077" "dmask=0077" ];
     };
+  
+  fileSystems."/data" = {
+    device = "/dev/disk/by-uuid/51bafa7b-f982-4044-a42d-983053a2db22"; 
+    fsType = "ext4";                        
+    options = [ "defaults" ];
+  };
 
+  fileSystems."/home/aadithyan/data" = {
+    device = "/data";
+    fsType = "none";
+    options = [ "bind" ];
+  };
+  
   swapDevices =
     [ { device = "/dev/disk/by-uuid/b54f0b60-872d-451f-9733-064023e7d788"; }
     ];
