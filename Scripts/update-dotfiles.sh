@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/run/current-system/sw/bin/bash
 set -euo pipefail
 
 REPO_DIR="/home/aadithyan/.dotfiles"
