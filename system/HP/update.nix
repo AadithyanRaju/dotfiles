@@ -28,7 +28,7 @@ let
 in
 {
   # Make sure git is available
-  environment.systemPackages = [ pkgs.git updateDotfiles ];
+  environment.systemPackages = [ updateDotfiles ];
 
   # Systemd service
   systemd.services.update-dotfiles = {
@@ -41,13 +41,6 @@ in
   };
 
   # Timer to run every hour
-  systemd.timers.update-dotfiles = {
-    description = "Run update-dotfiles every hour";
-    wantedBy = [ "timers.target" ];
-    timerConfig = {
-      OnBootSec = "10min";
-      OnUnitActiveSec = "1h";
-      Persistent = true;
-    };
+  systemd.timers.update-dotfiles = {  
   };
 }
