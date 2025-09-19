@@ -4,26 +4,23 @@ let
   updateDotfiles = pkgs.writeShellScriptBin "update-dotfiles" ''
     set -euo pipefail
 
-    REPO_DIR="/home/aadithyan/.dotfiles"
-    BRANCH="main"
-    REMOTE="origin"
-
-    cd "$REPO_DIR"
-
-    git fetch --quiet "$REMOTE" "$BRANCH"
-
-    LOCAL_COMMIT=$(git rev-parse HEAD)
-    REMOTE_COMMIT=$(git rev-parse "$REMOTE/$BRANCH")
-
+    GIT=/run/current-system/sw/bin/git
+    NIXOS_REBUILD=/run/current-system/sw/bin/nixos-rebuild
+    
+    $GIT fetch --quiet "$REMOTE" "$BRANCH"
+    LOCAL_COMMIT=$($GIT rev-parse HEAD)
+    REMOTE_COMMIT=$($GIT rev-parse "$REMOTE/$BRANCH")
+    
     if [ "$LOCAL_COMMIT" != "$REMOTE_COMMIT" ]; then
         echo "[+] Repo is behind, pulling updates..."
-        git reset --hard "$REMOTE/$BRANCH"
-
+        $GIT reset --hard "$REMOTE/$BRANCH"
+    
         echo "[+] Verified repo matches GitHub, rebuilding system..."
-        nixos-rebuild switch --flake "$REPO_DIR" --impure
+        $NIXOS_REBUILD switch --flake "$REPO_DIR" --impure
     else
         echo "[-] Already up-to-date."
     fi
+
   '';
 in
 {
@@ -37,6 +34,7 @@ in
       Type = "oneshot";
       ExecStart = "${updateDotfiles}/bin/update-dotfiles";
       User = "aadithyan";
+          Environment = "PATH=/run/current-system/sw/bin";
     };
   };
 
