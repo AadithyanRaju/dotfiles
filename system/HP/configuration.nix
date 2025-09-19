@@ -4,29 +4,29 @@
   imports =
     [ 
       #./common/cuda.nix
-      ./common/docker.nix
-      ./common/ld.nix
-      ./HP/systemPackages.nix
+      ../common/docker.nix
+      ../common/ld.nix
+      ./systemPackages.nix
       #./common/theme.nix
       #./common/virtualbox.nix
       #./common/vmware.nix
       #./common/kvm.nix
 
       # Do Not Touch
-      ./common/appimage.nix
-      ./common/boot.nix
-      ./common/bluetooth.nix
+      ../common/appimage.nix
+      ../common/boot.nix
+      ../common/bluetooth.nix
       #./common/fonts.nix
-      ./HP/hardware-configuration.nix
-      ./common/hyprland.nix
-      ./HP/network.nix
+      ./hardware-configuration.nix
+      ../common/hyprland.nix
+      ./network.nix
       #./common/network-cache.nix
-      ./common/settings.nix
-      ./common/shell.nix
-      ./common/sound.nix
-      ./common/time-locale.nix
-      ./common/users.nix
-      ./common/xserver.nix
+      ../common/settings.nix
+      ../common/shell.nix
+      ../common/sound.nix
+      ../common/time-locale.nix
+      ../common/users.nix
+      ../common/xserver.nix
     ];
 
   services = {
