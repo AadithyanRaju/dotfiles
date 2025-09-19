@@ -40,7 +40,7 @@
     ];
    };
   
-  services.logind.settings.Login.HandleLidSwitch
+  services.logind.settings.Login.HandleLidSwitch = "ignore";
   services.logind.settings.Login.HandleLidSwitchDocked = "ignore";
   services.logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
   security.sudo.extraRules = [
