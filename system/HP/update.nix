@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   updateDotfiles = pkgs.writeShellScriptBin "update-dotfiles" ''
@@ -40,6 +40,8 @@ in
       Type = "oneshot";
       ExecStart = "${updateDotfiles}/bin/update-dotfiles";
       User = "aadithyan";
+      StandardOutput = "journal";
+      StandardError = "journal";
     };
   };
 
