@@ -30,6 +30,18 @@
                   }
                 ];
             };
+            HP = lib.nixosSystem {
+                inherit system;
+                modules = [
+                  ./system/HP/configuration.nix
+                    home-manager.nixosModules.home-manager
+                    {
+                        home-manager.useGlobalPkgs = true;
+                        home-manager.useUserPackages = true;
+                        home-manager.users.aadithyan = import ./homemanager/home.nix;
+                    }
+                ];
+            };
         };
         homeConfigurations = {
             aadithyan = home-manager.lib.homeManagerConfiguration {
