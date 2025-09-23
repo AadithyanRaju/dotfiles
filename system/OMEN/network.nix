@@ -10,7 +10,7 @@
             "::1" = [ "localhost" "OMEN" ];
         };
         firewall = {
-            enable = false;
+            enable = true;
             # allowedTCPPorts = [ 8000 ];
             # allowedUDPPorts = [ 8000 ];
         };
