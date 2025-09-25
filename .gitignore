@@ -1,3 +1,4 @@
 *.lock
 Scripts/Minecraft/TLauncher.jar
 config/systemd/user
+config/systemd/user/cliphist.service
