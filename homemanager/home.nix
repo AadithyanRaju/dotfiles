@@ -7,6 +7,7 @@
     ./git.nix
     ./packages.nix
     ./services.nix
+    ./xdgPortal.nix
   ];
   
   home = {

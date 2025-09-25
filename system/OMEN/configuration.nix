@@ -27,6 +27,7 @@
       ../common/shell.nix
       ../common/sound.nix
       ../common/time-locale.nix
+      #../common/tlp.nix
       ../common/users.nix
       ../common/xserver.nix
     ];
