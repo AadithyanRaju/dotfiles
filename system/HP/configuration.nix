@@ -7,6 +7,7 @@
       ../common/docker.nix
       ../common/ld.nix
       ./jellyfin.nix
+      ./qbittorrent.nix
       ./reconnect.nix
       ./systemPackages.nix
       ./update.nix
