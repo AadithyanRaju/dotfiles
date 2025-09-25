@@ -7,7 +7,7 @@
     extraOptions = [ "--network=host" ];
     environment = {
       PUID = "1000";
-      PGID = "1000";
+      PGID = "100";
       TZ = "Asia/Kolkata";
       UMASK_SET = "022";
       WEBUI_PORT = "8080";
