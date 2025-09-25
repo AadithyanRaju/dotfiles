@@ -13,9 +13,8 @@
       WEBUI_PORT = "8080";
     };
     volumes = [
-      "/data/qbittorrent/config:/config"
+      "/data/qbittorrent/appdata:/appdata"
       "/data/qbittorrent/downloads:/downloads"
-      "/data/qbittorrent/watch:/watch"
     ];
   };
 }
