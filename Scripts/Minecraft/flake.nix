@@ -12,22 +12,29 @@
     in {
       devShells.${system}.default = pkgs.mkShell {
         buildInputs = with pkgs; [
-          jdk21      # Java runtime
-          libx11
-          libxext
-          libxrender
+          jdk21
+          xorg.libX11
+          xorg.libXext
+          xorg.libXrender
           xorg.libXi
+          xorg.libXtst
           libxrandr
           fontconfig
           freetype
           zlib
+          gtk3
+          alsa-lib
+          openal
         ];
 
         shellHook = ''
           export _JAVA_AWT_WM_NONREPARENTING=1
           export GDK_BACKEND=x11
-          echo " TLauncher devShell ready. Run with:"
+          echo ""
+          echo "✅ TLauncher devShell ready!"
+          echo "Run it with:"
           echo "    java -jar /path/to/TLauncher.jar"
+          echo ""
         '';
       };
     };
