@@ -15,6 +15,8 @@
     volumes = [
       "/data/qbittorrent/appdata:/appdata"
       "/data/qbittorrent/downloads:/downloads"
+      "/data/qbittorrent/config:/config"
+
     ];
   };
 }

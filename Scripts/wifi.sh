@@ -36,8 +36,13 @@ parse_commandline(){
                 nmcli device wifi rescan
                 ;;
             -R|--reconnect)
-                nmcli device disconnect wlo1
-                nmcli device connect wlo1
+                if [ $HOSTNAME == "HP" ];then
+                    nmcli device disconnect wlp3s0
+                    nmcli device connect wlp3s0
+                else
+                    nmcli device disconnect wlo1
+                    nmcli device connect wlo1
+                fi
                 ;;
             -c|--connect)
                 # Get list of SSID and SECURITY
