@@ -42,6 +42,7 @@
                 ];
                 specialArgs = {
                     inherit userSettings;
+                    inherit inputs;
                 };
             };
             HP = lib.nixosSystem {
