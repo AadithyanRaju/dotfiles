@@ -1,13 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings,... }:
 
 {
-    users.users.aadithyan = {
+    users.users.${userSettings.username} = {
       isNormalUser = true;
-      description = "Aadithyan Raju";
+      description = userSettings.name;
       shell = pkgs.zsh;
-      extraGroups = [ "wheel" "networkmanager" "video" "audio" ]; # Enable ‘sudo’ for the user.
+      extraGroups = [ "wheel" "networkmanager" "video" "audio" ]; 
       packages = with pkgs; [
       
       ];
+      uid = 1000;
     };
 }

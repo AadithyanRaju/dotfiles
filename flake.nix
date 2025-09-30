@@ -9,6 +9,10 @@
             url = "github:nix-community/home-manager/master";
             inputs.nixpkgs.follows = "nixpkgs";
         };
+        blocklist-hosts = {
+            url = "github:StevenBlack/hosts";
+            flake = false;
+        };
     };
 
     outputs = inputs@{ self, nixpkgs, home-manager, ... }: 
@@ -16,6 +20,13 @@
         lib = nixpkgs.lib;
         system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages.${system};
+        userSettings = rec {
+            username = "aadithyan";
+            name = "Aadithyan Raju";
+            email = "aadithyan75@gmail.com";
+            dotfilesDir = "~/.dotfiles";
+            userHome = "/home/${username}";
+        };
     in {
         nixosConfigurations = {
             OMEN = lib.nixosSystem {
@@ -29,6 +40,9 @@
                     home-manager.users.aadithyan = import ./homemanager/home.nix;
                   }
                 ];
+                specialArgs = {
+                    inherit userSettings;
+                };
             };
             HP = lib.nixosSystem {
                 inherit system;

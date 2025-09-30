@@ -1,8 +1,9 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   imports =
     [ 
+      ../base.nix
       #./common/cuda.nix
       ../common/docker.nix
       ./gaming.nix
@@ -16,7 +17,6 @@
       # Do Not Touch
       ../common/appimage.nix
       ../common/boot.nix
-      ../common/bluetooth.nix
       #../common/fonts.nix
       ./hardware-configuration.nix
       ../common/hyprland.nix
