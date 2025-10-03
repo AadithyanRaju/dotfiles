@@ -56,6 +56,10 @@
                         home-manager.users.aadithyan = import ./homemanager/home.nix;
                     }
                 ];
+                specialArgs = {
+                    inherit userSettings;
+                    inherit inputs;
+                };
             };
         };
         homeConfigurations = {

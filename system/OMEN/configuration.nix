@@ -10,7 +10,7 @@
       ../common/ld.nix
       ./systemPackages.nix
       #./common/theme.nix
-      ../common/virtualbox.nix
+      #../common/virtualbox.nix
       #./common/vmware.nix
       ../common/kvm.nix
 
