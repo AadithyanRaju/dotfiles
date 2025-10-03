@@ -3,8 +3,6 @@
 {
   imports = [ 
     ../applications/development/ccpp.nix
-    ../applications/development/python.nix
-    ../applications/utils/common.nix
   ];
   environment.systemPackages = with pkgs; [
     #libsForQt5.ktorrent

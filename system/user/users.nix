@@ -6,9 +6,7 @@
       description = userSettings.name;
       shell = pkgs.zsh;
       extraGroups = [ "wheel" "networkmanager" "video" "audio" ]; 
-      packages = with pkgs; [
-      
-      ];
+      packages = with pkgs; [];
       uid = 1000;
     };
 }

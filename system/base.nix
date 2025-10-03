@@ -3,6 +3,9 @@
 {
   imports =
     [
+      ./applications/development/python.nix
+      ./applications/utils/common.nix
+      
       ./hardware/bluetooth.nix
       ./hardware/kernel.nix
       ./hardware/network.nix
@@ -15,5 +18,11 @@
       ./security/firejail.nix
       ./security/gpg.nix
       ./security/sudo.nix
+
+      ./user/users.nix
     ];
+  services = {
+    gnome.gnome-keyring.enable = true;
+    flatpak.enable = true;
+  };
 }

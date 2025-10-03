@@ -1,52 +1,40 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings,... }:
 
 {
   imports =
     [ 
       ../base.nix
+      ../services/noPowerOffOnLidClose.nix
       #./common/cuda.nix
       ../common/docker.nix
       ../common/ld.nix
-      ./jellyfin.nix
-      ./qbittorrent.nix
-      ./reconnect.nix
-      ./systemPackages.nix
-      ./update.nix
-      #./common/theme.nix
-      #./common/virtualbox.nix
-      #./common/vmware.nix
-      #./common/kvm.nix
+      ../applications/containers/jellyfin.nix
+      ../applications/containers/qbittorrent.nix
+      ../services/reconnect.nix
+      ../services/update.nix
 
       # Do Not Touch
       ../common/appimage.nix
       ../common/boot.nix
-      #./common/fonts.nix
       ./hardware-configuration.nix
       ../common/hyprland.nix
-      #./common/network-cache.nix
       ../common/settings.nix
       ../common/shell.nix
       ../common/sound.nix
       ../common/time-locale.nix
-      ../common/users.nix
       ../common/xserver.nix
     ];
 
   services = {
-    gnome.gnome-keyring.enable = true;
-    flatpak.enable = true;
-    # printing.enable = true;
     xserver.videoDrivers = [
       "amdgpu"
     ];
    };
   
-  services.logind.settings.Login.HandleLidSwitch = "ignore";
-  services.logind.settings.Login.HandleLidSwitchDocked = "ignore";
-  services.logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
+  
   security.sudo.extraRules = [
     {
-      users = [ "aadithyan" ];
+      users = [ userSettings.username ];
       commands = [
         { command = "${pkgs.nixos-rebuild}/bin/nixos-rebuild"; options = [ "NOPASSWD" ]; }
       ];

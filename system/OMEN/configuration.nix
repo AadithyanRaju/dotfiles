@@ -9,7 +9,6 @@
       ./gaming.nix
       ../common/ld.nix
       ./systemPackages.nix
-      #./common/theme.nix
       #../common/virtualbox.nix
       #./common/vmware.nix
       ../common/kvm.nix
@@ -17,25 +16,17 @@
       # Do Not Touch
       ../common/appimage.nix
       ../common/boot.nix
-      #../common/fonts.nix
       ./hardware-configuration.nix
       ../common/hyprland.nix
-      #../common/network-cache.nix
       ./nvidia.nix
       ../common/settings.nix
       ../common/shell.nix
       ../common/sound.nix
       ../common/time-locale.nix
-      #../common/tlp.nix
-      ../common/users.nix
       ../common/xserver.nix
     ];
 
-  services = {
-    gnome.gnome-keyring.enable = true;
-    flatpak.enable = true;
-     # printing.enable = true;
-   };
+
 
   # Configure keymap in X11
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
