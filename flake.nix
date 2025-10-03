@@ -44,22 +44,22 @@
                     inherit inputs;
                 };
             };
+        mkHome = modules: 
+            home-manager.lib.homeManagerConfiguration {
+                inherit pkgs;
+                modules = modules;
+                extraSpecialArgs = {
+                    inherit userSettings;
+                    dotfilesPath = "${userSettings.dotfilesDir}";
+                };
+            };
     in {
         nixosConfigurations = {
             OMEN = mkSystem "OMEN" ./system/OMEN/configuration.nix;
             HP = mkSystem "HP" ./system/HP/configuration.nix;   
         };
         homeConfigurations = {
-            aadithyan = home-manager.lib.homeManagerConfiguration {
-                inherit pkgs;
-                modules = [
-                  ./homemanager/home.nix
-                ];
-                extraSpecialArgs = {
-                    inherit userSettings;
-                    dotfilesPath = "${userSettings.dotfilesDir}";
-                };
-            };
+            ${userSettings.username} = mkHome [ ./homemanager/home.nix ];
         };
     };
 }
