@@ -20,7 +20,6 @@
       #../common/fonts.nix
       ./hardware-configuration.nix
       ../common/hyprland.nix
-      ./network.nix
       #../common/network-cache.nix
       ./nvidia.nix
       ../common/settings.nix

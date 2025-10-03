@@ -5,6 +5,7 @@
     [
       ./hardware/bluetooth.nix
       ./hardware/kernel.nix
+      ./hardware/network.nix
       ./hardware/printing.nix
       ./hardware/systemd.nix
       ./hardware/time.nix

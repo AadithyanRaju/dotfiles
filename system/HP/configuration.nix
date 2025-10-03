@@ -23,7 +23,6 @@
       #./common/fonts.nix
       ./hardware-configuration.nix
       ../common/hyprland.nix
-      ./network.nix
       #./common/network-cache.nix
       ../common/settings.nix
       ../common/shell.nix
