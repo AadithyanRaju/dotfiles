@@ -46,8 +46,8 @@
                 };
             };
         nixosConfigurations = {
-            OMEN = mkSystem "OMEN" ./system/OMEN/configuration.nix
-            HP = mkSystem "HP" ./system/HP/configuration.nix     
+            OMEN = mkSystem "OMEN" ./system/OMEN/configuration.nix;
+            HP = mkSystem "HP" ./system/HP/configuration.nix;   
         };
         homeConfigurations = {
             aadithyan = home-manager.lib.homeManagerConfiguration {
