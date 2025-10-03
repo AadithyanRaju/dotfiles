@@ -5,19 +5,13 @@
     [ 
       ../base.nix
       ../services/noPowerOffOnLidClose.nix
-      ../common/ld.nix
+
       ../applications/containers/jellyfin.nix
       ../applications/containers/qbittorrent.nix
       ../services/reconnect.nix
       ../services/update.nix
 
-      # Do Not Touch
-      ../common/appimage.nix
-      ../common/boot.nix
       ./hardware-configuration.nix
-      ../common/hyprland.nix
-      ../common/sound.nix
-      ../common/xserver.nix
     ];
 
   services = {

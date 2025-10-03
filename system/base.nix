@@ -8,10 +8,17 @@
       ./applications/development/python.nix
       ./applications/utils/common.nix
 
+      ./common/appimage.nix
+      ./common/boot.nix
+      ./common/hyprland.nix
+      ./common/ld.nix
+      ./common/xserver.nix
+
       ./hardware/bluetooth.nix
       ./hardware/kernel.nix
       ./hardware/network.nix
       ./hardware/printing.nix
+      ./hardware/sound.nix
       ./hardware/systemd.nix
       ./hardware/time.nix
 

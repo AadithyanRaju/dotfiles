@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 {
   virtualisation.libvirtd = {
     enable = true;
@@ -7,7 +7,7 @@
   virtualisation.spiceUSBRedirection.enable = true;
 
 
-  users.users.aadithyan.extraGroups = [ "libvirtd" "kvm" ]; 
+  users.users.${userSettings.username}.extraGroups = [ "libvirtd" "kvm" ]; 
   environment.systemPackages = with pkgs; [
     virt-manager
     qemu

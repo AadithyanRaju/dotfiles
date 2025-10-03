@@ -5,20 +5,11 @@
     [ 
       ../base.nix
       ./gaming.nix
-      ../common/ld.nix
       ./systemPackages.nix
-      #../common/virtualbox.nix
-      #./common/vmware.nix
-      ../common/kvm.nix
+      ../virtualisation/kvm.nix
 
-      # Do Not Touch
-      ../common/appimage.nix
-      ../common/boot.nix
       ./hardware-configuration.nix
-      ../common/hyprland.nix
       ./nvidia.nix
-      ../common/sound.nix
-      ../common/xserver.nix
     ];
 
 
