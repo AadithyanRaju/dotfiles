@@ -1,0 +1,8 @@
+{ config, pkgs, userSettings, ... }:
+
+{
+  # Docker Support
+  virtualisation.docker.enable = true;
+  users.users.${userSettings.username}.extraGroups = [ "docker" ];
+
+}

@@ -1,4 +1,4 @@
-{ ... }:
+{ systemSettings, ... }:
 
 {
   services.timesyncd = {
@@ -10,5 +10,9 @@
       "time3.google.com"
       "time4.google.com"
     ];
+  };
+  time = {
+    timeZone = systemSettings.timeZone;
+    hardwareClockInLocalTime = true;
   };
 }

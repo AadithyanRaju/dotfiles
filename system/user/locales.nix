@@ -1,12 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  time = {
-    timeZone = "Asia/Kolkata";
-    #timeZone = "Asia/Dubai";
-    hardwareClockInLocalTime = true;
-  };
-  
   # Select internationalisation properties.
   i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {

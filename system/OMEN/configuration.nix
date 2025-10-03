@@ -4,8 +4,6 @@
   imports =
     [ 
       ../base.nix
-      #./common/cuda.nix
-      ../common/docker.nix
       ./gaming.nix
       ../common/ld.nix
       ./systemPackages.nix
@@ -19,10 +17,7 @@
       ./hardware-configuration.nix
       ../common/hyprland.nix
       ./nvidia.nix
-      ../common/settings.nix
-      ../common/shell.nix
       ../common/sound.nix
-      ../common/time-locale.nix
       ../common/xserver.nix
     ];
 

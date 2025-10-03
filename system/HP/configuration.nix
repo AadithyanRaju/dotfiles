@@ -5,8 +5,6 @@
     [ 
       ../base.nix
       ../services/noPowerOffOnLidClose.nix
-      #./common/cuda.nix
-      ../common/docker.nix
       ../common/ld.nix
       ../applications/containers/jellyfin.nix
       ../applications/containers/qbittorrent.nix
@@ -18,10 +16,7 @@
       ../common/boot.nix
       ./hardware-configuration.nix
       ../common/hyprland.nix
-      ../common/settings.nix
-      ../common/shell.nix
       ../common/sound.nix
-      ../common/time-locale.nix
       ../common/xserver.nix
     ];
 

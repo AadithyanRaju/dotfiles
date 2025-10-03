@@ -20,6 +20,9 @@
         lib = nixpkgs.lib;
         system = "x86_64-linux";
         pkgs = nixpkgs.legacyPackages.${system};
+        systemSettings = rec {
+            timeZone = "Asia/Kolkata";
+        };
         userSettings = rec {
             username = "aadithyan";
             name = "Aadithyan Raju";
@@ -42,6 +45,7 @@
                 specialArgs = {
                     inherit userSettings;
                     inherit inputs;
+                    inherit systemSettings;
                     hostName = name;
                 };
             };
