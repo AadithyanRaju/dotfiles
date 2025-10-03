@@ -27,7 +27,6 @@
             userHome = "/home/${username}";
             dotfilesDir = "${userHome}/.dotfiles";
         };
-    in {
         mkSystem = name: configFile:
             lib.nixosSystem {
                 inherit system;
@@ -45,6 +44,7 @@
                     inherit inputs;
                 };
             };
+    in {
         nixosConfigurations = {
             OMEN = mkSystem "OMEN" ./system/OMEN/configuration.nix;
             HP = mkSystem "HP" ./system/HP/configuration.nix;   
