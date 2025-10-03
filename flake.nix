@@ -24,36 +24,20 @@
             username = "aadithyan";
             name = "Aadithyan Raju";
             email = "aadithyan75@gmail.com";
-            dotfilesDir = "~/.dotfiles";
             userHome = "/home/${username}";
+            dotfilesDir = "${userHome}/.dotfiles";
         };
     in {
-        nixosConfigurations = {
-            OMEN = lib.nixosSystem {
+        mkSystem = name: configFile:
+            lib.nixosSystem {
                 inherit system;
                 modules = [
-                  ./system/OMEN/configuration.nix
-                  home-manager.nixosModules.home-manager
-                  {
-                    home-manager.useGlobalPkgs = true;
-                    home-manager.useUserPackages = true;
-                    home-manager.users.aadithyan = import ./homemanager/home.nix;
-                  }
-                ];
-                specialArgs = {
-                    inherit userSettings;
-                    inherit inputs;
-                };
-            };
-            HP = lib.nixosSystem {
-                inherit system;
-                modules = [
-                  ./system/HP/configuration.nix
+                    configFile
                     home-manager.nixosModules.home-manager
                     {
                         home-manager.useGlobalPkgs = true;
                         home-manager.useUserPackages = true;
-                        home-manager.users.aadithyan = import ./homemanager/home.nix;
+                        home-manager.users.${userSettings.username} = import ./homemanager/home.nix;
                     }
                 ];
                 specialArgs = {
@@ -61,6 +45,9 @@
                     inherit inputs;
                 };
             };
+        nixosConfigurations = {
+            OMEN = mkSystem "OMEN" ./system/OMEN/configuration.nix
+            HP = mkSystem "HP" ./system/HP/configuration.nix     
         };
         homeConfigurations = {
             aadithyan = home-manager.lib.homeManagerConfiguration {
@@ -69,7 +56,8 @@
                   ./homemanager/home.nix
                 ];
                 extraSpecialArgs = {
-                    dotfilesPath = "/home/aadithyan/.dotfiles";  
+                    inherit userSettings;
+                    dotfilesPath = "${userSettings.dotfilesDir}";
                 };
             };
         };
