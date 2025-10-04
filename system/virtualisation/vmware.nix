@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
     virtualisation.vmware = {
@@ -11,5 +11,5 @@
         open-vm-tools  # VMware guest tools
     ];
 
-    users.users.aadithyan.extraGroups = [ "vboxusers" "libvirtd" "kvm" "disk" ];
+    users.users.${userSettings.username}.extraGroups = [ "vboxusers" "libvirtd" "kvm" "disk" ];
 }

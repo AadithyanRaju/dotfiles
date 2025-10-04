@@ -62,10 +62,6 @@
     nautilus
     xfce.thunar
     ranger
-    wayvnc openssl wlr-randr
-
-    #Clipboard managers
-    cliphist wl-clipboard
 
     #USB
     libusb1

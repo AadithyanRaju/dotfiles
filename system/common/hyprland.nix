@@ -34,6 +34,9 @@
         networkmanagerapplet
         networkmanager_dmenu
         swaynotificationcenter
+
+        #Clipboard managers
+        cliphist wl-clipboard
     ];
     fonts.packages = with pkgs; [
         font-awesome

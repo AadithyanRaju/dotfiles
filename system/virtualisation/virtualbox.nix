@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
     virtualisation.virtualbox = {
@@ -11,5 +11,5 @@
             dragAndDrop = true;
         };
     };
-    users.extraGroups.vboxusers.members = [ "aadithyan" ];
+    users.extraGroups.vboxusers.members = [ userSettings.username ];
 }

@@ -9,12 +9,12 @@
       ./applications/utils/common.nix
 
       ./common/appimage.nix
-      ./common/boot.nix
       ./common/hyprland.nix
       ./common/ld.nix
       ./common/xserver.nix
 
       ./hardware/bluetooth.nix
+      ./hardware/boot.nix
       ./hardware/kernel.nix
       ./hardware/network.nix
       ./hardware/printing.nix
