@@ -10,6 +10,7 @@
       ../applications/containers/qbittorrent.nix
       ../services/reconnect.nix
       ../services/update.nix
+      ../security/ssh.nix
 
       ./hardware-configuration.nix
     ];
@@ -43,7 +44,6 @@
   #   enableSSHSupport = true;
   # };
 
-  services.openssh.enable = true;
-
+  
 }
 

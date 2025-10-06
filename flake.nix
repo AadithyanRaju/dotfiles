@@ -26,9 +26,12 @@
         userSettings = rec {
             username = "aadithyan";
             name = "Aadithyan Raju";
-            email = "aadithyan75@gmail.com";
             userHome = "/home/${username}";
             dotfilesDir = "${userHome}/.dotfiles";
+            git = {
+                userName = "AadithyanRaju";
+                userEmail = "aadithyan75@gmail.com";
+            };
         };
         mkSystem = name: configFile:
             lib.nixosSystem {

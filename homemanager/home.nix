@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   imports = [
@@ -11,8 +11,8 @@
   ];
   
   home = {
-    username = "aadithyan";
-    homeDirectory = "/home/aadithyan";
+    username = userSettings.username;
+    homeDirectory = userSettings.userHome;
     stateVersion = "24.11";
   };
   programs.home-manager.enable = true;
