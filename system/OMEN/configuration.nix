@@ -3,6 +3,7 @@
 {
   imports =[ 
     ../base.nix
+    ../features.nix
 
     ./gaming.nix
     ./hardware-configuration.nix
@@ -10,10 +11,10 @@
     ./systemPackages.nix
     
     ../virtualisation/kvm.nix
-    
-    ../applications/ai/gemini.nix
     ../applications/development/ccpp.nix
     ../applications/development/pentest.nix
     ];
+  
+  features.cli.gemini.enable = true;
 }
 
