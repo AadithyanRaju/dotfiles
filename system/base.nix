@@ -6,7 +6,7 @@
       ./features.nix
       ./settings.nix
 
-      ./applications/utils/common.nix
+      
 
       ./common/appimage.nix
       ./common/hyprland.nix

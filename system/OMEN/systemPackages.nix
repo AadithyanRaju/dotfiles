@@ -15,9 +15,6 @@
     sticky        #Sticky notes
     
 
-    #Browser
-    google-chrome
-    #opera
 
     #Office
     wpsoffice
