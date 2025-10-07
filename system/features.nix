@@ -1,6 +1,6 @@
 { ... }:
 {
   imports = [ 
-    ./applications/ai/gemini.nix
+    ./applications/ai
   ];
 }

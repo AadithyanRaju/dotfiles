@@ -15,6 +15,6 @@
     ../applications/development/pentest.nix
     ];
   
-  features.cli.gemini.enable = true;
+  features.cli.gemini.enable = false;
 }
 
