@@ -15,6 +15,13 @@
     ../applications/development/pentest.nix
     ];
   
-  features.cli.gemini.enable = false;
+  features = {
+    cli.gemini.enable = false;
+    apps.editors = {
+      vscode.enable = true;
+      zed.enable = false;
+      intellijUltimate.enable = false;
+    };
+  };
 }
 

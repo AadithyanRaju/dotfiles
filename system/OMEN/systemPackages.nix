@@ -35,8 +35,5 @@
     spotify
     totem
 
-    #Other Apps
-    zed-editor
-
   ];
 }
