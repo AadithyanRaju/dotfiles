@@ -9,9 +9,9 @@
     ./nvidia.nix
     ./systemPackages.nix
     
-    ../ai/gemini.nix
     ../virtualisation/kvm.nix
     
+    ../applications/ai/gemini.nix
     ../applications/development/ccpp.nix
     ../applications/development/pentest.nix
     ];
