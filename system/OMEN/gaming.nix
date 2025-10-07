@@ -38,7 +38,7 @@
         pkgs.gamescope
       ];
     })
-    lutris
+    #lutris
     gamemode
     glxinfo
     mesa
