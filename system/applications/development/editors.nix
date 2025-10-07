@@ -1,6 +1,7 @@
 { config, lib, pkgs, ... }:
-with lib;let 
-cfg = config.features.apps.editors;
+with lib;
+let 
+  cfg = config.features.apps.editors;
 in
 {
   options.features.apps.editors = {
@@ -20,25 +21,22 @@ in
       description = "Enable IntelliJ Ultimate IDE.";
     };
   };
+
   config = mkMerge [
-    (mkIf cfg.vscode.enable {
+    {
       environment.systemPackages = with pkgs; [
-        vscode
+        neovim
+        vim
       ];
+    }
+    (mkIf cfg.vscode.enable {
+      environment.systemPackages = with pkgs; [ vscode ];
     })
     (mkIf cfg.zed.enable {
-      environment.systemPackages = with pkgs; [
-        zed-editor
-      ];
+      environment.systemPackages = with pkgs; [ zed-editor ];
     })
     (mkIf cfg.intellijUltimate.enable {
-      environment.systemPackages = with pkgs; [
-        jetbrains.idea-ultimate
-      ];
+      environment.systemPackages = with pkgs; [ jetbrains.idea-ultimate ];
     })
-  ];
-  environment.systemPackages = with pkgs; [
-    neovim
-    vim 
   ];
 }

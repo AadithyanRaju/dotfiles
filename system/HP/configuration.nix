@@ -4,7 +4,6 @@
   imports =
     [ 
       ../base.nix
-      ../features.nix
       ../services/noPowerOffOnLidClose.nix
 
       ../applications/containers
@@ -34,11 +33,6 @@
     }
   ];
 
-  features.apps.editors = {
-    vscode.enable = true;
-    zed.enable = false;
-    intellijUltimate.enable = false;
-  };
   # Configure keymap in X11
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
 

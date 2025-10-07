@@ -6,11 +6,6 @@
     #ollama
     gitkraken
 
-    #Programming
-    ghc     #Haskell compiler
-    go
-    jdk8
-    nodejs_24
     
     #Utilities
     anydesk       #Remote desktop

@@ -3,9 +3,9 @@
 {
   imports =
     [
+      ./features.nix
       ./settings.nix
 
-      ./applications/development/python.nix
       ./applications/utils/common.nix
 
       ./common/appimage.nix

@@ -3,7 +3,6 @@
 {
   imports =[ 
     ../base.nix
-    ../features.nix
 
     ./gaming.nix
     ./hardware-configuration.nix
@@ -11,17 +10,31 @@
     ./systemPackages.nix
     
     ../virtualisation/kvm.nix
-    ../applications/development/ccpp.nix
-    ../applications/development/pentest.nix
     ];
   
   features = {
     cli.gemini.enable = false;
     apps.editors = {
       vscode.enable = true;
-      zed.enable = false;
+      zed.enable = true;
       intellijUltimate.enable = false;
     };
+    compilers = {
+      ccpp.enable = true;
+      haskell.enable = true;
+      go.enable = true;
+      java.enable = true;
+      nodejs.enable = false;
+    };
+    pentest = {
+      enable = true;
+      additionalTools = with pkgs; [
+        # burpsuite
+        # ghidra
+        # thc-hydra
+       ];
+    };
+
   };
 }
 
