@@ -1,32 +1,19 @@
 { config, pkgs, userSettings, ... }:
 
 {
-  imports =
-    [ 
-      ../base.nix
-      ./gaming.nix
-      ./systemPackages.nix
-      ../virtualisation/kvm.nix
+  imports =[ 
+    ../base.nix
 
-      ./hardware-configuration.nix
-      ./nvidia.nix
+    ./gaming.nix
+    ./hardware-configuration.nix
+    ./nvidia.nix
+    ./systemPackages.nix
+    
+    ../ai/gemini.nix
+    ../virtualisation/kvm.nix
+    
+    ../applications/development/ccpp.nix
+    ../applications/development/pentest.nix
     ];
-
-
-
-  # Configure keymap in X11
-  # services.xserver.xkbOptions = "eurosign:e,caps:escape";
-
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  # programs.mtr.enable = true;
-  # programs.gnupg.agent = {
-  #   enable = true;
-  #   enableSSHSupport = true;
-  # };
-
-  # services.openssh.enable = true;
-
 }
 

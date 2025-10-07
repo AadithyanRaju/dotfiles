@@ -40,12 +40,6 @@
     #Browser
     firefox
 
-    #Editors
-    #jetbrains.idea-ultimate
-    neovim
-    vim 
-    vscode
-
     #Media
     ffmpeg_6-full
     vlc

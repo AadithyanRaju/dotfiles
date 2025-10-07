@@ -1,9 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  imports = [ 
-    ../applications/development/ccpp.nix
-  ];
   environment.systemPackages = with pkgs; [
     #libsForQt5.ktorrent
     #ollama
@@ -15,21 +12,6 @@
     jdk8
     nodejs_24
     
-
-
-    #Penetration Testing
-    binwalk
-    burpsuite
-    exif
-    exiftool
-    #ghidra
-    hashcat
-    #thc-hydra
-    nmap
-    pdfcrack
-    #wifite2
-    wireshark-qt
-
     #Utilities
     anydesk       #Remote desktop
     flameshot

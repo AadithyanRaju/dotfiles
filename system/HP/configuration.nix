@@ -8,8 +8,11 @@
 
       ../applications/containers/jellyfin.nix
       ../applications/containers/qbittorrent.nix
+      ../applications/development/editors.nix
+
       ../services/reconnect.nix
       ../services/update.nix
+      
       ../security/ssh.nix
 
       ./hardware-configuration.nix
