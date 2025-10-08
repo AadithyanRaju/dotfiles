@@ -3,27 +3,27 @@
 {
   imports =[ 
     ../base.nix
-
-    ./gaming.nix
     ./hardware-configuration.nix
     ./nvidia.nix
     ./systemPackages.nix
     
-    ../virtualisation/kvm.nix
     ];
   
   features = {
-    cli.gemini.enable = false;
-    apps.editors = {
-      vscode.enable = true;
-      zed.enable = true;
-      intellijUltimate.enable = false;
+    apps = {
+      browsers = {
+        chrome.enable = true;
+      };
+      communication = {
+        signal.enable = true;
+      };
+      editors = {
+        vscode.enable = true;
+        zed.enable = true;
+        intellijUltimate.enable = false;
+      };
     };
-    communication = {
-      telegram.enable = true;
-      signal.enable = true;
-      discord.enable = true;
-    };
+    cli.ai.gemini.enable = false;
     compilers = {
       ccpp.enable = true;
       haskell.enable = true;
@@ -39,6 +39,19 @@
         # thc-hydra
        ];
     };
+    virtualisation = {
+      kvm.enable = true;
+    };
+    hardware = {
+      printing.enable = true;
+      nvidia = {
+        enable = true;
+        hasAmdGPU = true;
+        amdgpuBusId = "PCI:7:0:0";
+        nvidiaBusId = "PCI:1:0:0";
+      };
+    };
+    gaming.enable = true;
 
   };
 }

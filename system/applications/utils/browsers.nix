@@ -1,10 +1,10 @@
 { config, lib, pkgs, ... }:
 with lib;
 let 
-  cfg = config.features.browsers;
+  cfg = config.features.apps.browsers;
 in
 {
-  options.features.browsers = {
+  options.features.apps.browsers = {
     firefox.enable = mkOption {
       type = types.bool;
       default = true;

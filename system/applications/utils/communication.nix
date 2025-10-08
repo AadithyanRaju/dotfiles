@@ -1,10 +1,10 @@
 { config, lib, pkgs, ... }:
 with lib;
 let 
-  cfg = config.features.communication;
+  cfg = config.features.apps.communication;
 in
 {
-  options.features.communication = {
+  options.features.apps.communication = {
     telegram.enable = mkOption {
       type = types.bool;
       default = true;

@@ -1,26 +1,61 @@
-{ config, pkgs, ... }:
-
+{ config, lib, pkgs, ... }:
+with lib;
+let
+  cfg = config.features.services.qbittorrent;
+in
 {
-  virtualisation.oci-containers.containers.qbittorrent = {
-    image = "lscr.io/linuxserver/qbittorrent:latest";
-    autoStart = true;
-    extraOptions = [ "--network=host" ];
-    environment = {
-      PUID = "1000";
-      PGID = "100";
-      TZ = "Asia/Kolkata";
-      UMASK_SET = "022";
-      WEBUI_PORT = "8080";
+  options.features.services.qbittorrent = {
+    enable = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Enable qBittorrent container.";
     };
-    volumes = [
-      "/data/qbittorrent/appdata:/appdata"
-      "/data/qbittorrent/downloads:/downloads"
-      "/data/qbittorrent/config:/config"
 
-    ];
+    autoStart = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Start qBittorrent automatically at boot.";
+    };
+
+    storagePath = mkOption {
+      type = types.str;
+      default = "/data/qbittorrent";
+      description = "Base directory for qBittorrent storage (config, downloads, appdata).";
+    };
+
+    webUIPort = mkOption {
+      type = types.int;
+      default = 8080;
+      description = "Port for the qBittorrent Web UI.";
+    };
   };
-  networking.firewall = {
-    allowedTCPPorts = [ 8080 6881 ];
-    allowedUDPPorts = [ 6881 ];
+
+  config = mkIf cfg.enable {
+    virtualisation.docker.enable = true;
+
+    virtualisation.oci-containers.containers.qbittorrent = {
+      image = "lscr.io/linuxserver/qbittorrent:latest";
+      autoStart = cfg.autoStart;
+      extraOptions = [ "--network=host" ];
+
+      environment = {
+        PUID = "1000";
+        PGID = "100";
+        TZ = "Asia/Kolkata";
+        UMASK_SET = "022";
+        WEBUI_PORT = toString cfg.webUIPort;
+      };
+
+      volumes = [
+        "${cfg.storagePath}/appdata:/appdata"
+        "${cfg.storagePath}/downloads:/downloads"
+        "${cfg.storagePath}/config:/config"
+      ];
+    };
+
+    networking.firewall = {
+      allowedTCPPorts = [ cfg.webUIPort 6881 ];
+      allowedUDPPorts = [ 6881 ];
+    };
   };
 }

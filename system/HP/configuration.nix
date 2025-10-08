@@ -6,7 +6,6 @@
       ../base.nix
       ../services/noPowerOffOnLidClose.nix
 
-      ../applications/containers
       ../applications/development/editors.nix
 
       ../services/reconnect.nix
@@ -33,6 +32,10 @@
     }
   ];
 
+  features.services = {
+    jellyfin.enable = true;
+    qbittorrent.enable = true;
+  };
   # Configure keymap in X11
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
 

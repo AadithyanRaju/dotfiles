@@ -1,9 +1,9 @@
 { config, pkgs, lib, ... }:
 with lib;let 
-cfg = config.features.cli.gemini;
+cfg = config.features.cli.ai.gemini;
 in
 {
-  options.features.cli.gemini = {
+  options.features.cli.ai.gemini = {
     enable = mkOption {
       type = types.bool;
       default = false;
