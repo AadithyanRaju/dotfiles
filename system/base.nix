@@ -3,20 +3,19 @@
 {
   imports =
     [
-      ./features.nix
+      ./applications
+      ./common
+      ./hardware
       ./settings.nix
+      ./services
+      ./scurity
+      ./virtualisation
 
-      ./security/automount.nix
-      ./security/blocklist.nix
-      ./security/firejail.nix
-      ./security/gpg.nix
-      ./security/sudo.nix
 
       ./user/locales.nix
       ./user/shell.nix
       ./user/users.nix
 
-      ./virtualisation/docker.nix
     ];
   services = {
     gnome.gnome-keyring.enable = true;

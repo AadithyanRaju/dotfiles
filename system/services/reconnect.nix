@@ -1,5 +1,4 @@
-{ config, pkgs, ... }:
-
+{ config, lib, pkgs, ... }:
 let
   reconnectScript = pkgs.writeShellScriptBin "wifi-reconnect" ''
     #!/usr/bin/env bash

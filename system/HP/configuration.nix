@@ -4,14 +4,8 @@
   imports =
     [ 
       ../base.nix
-      ../services/noPowerOffOnLidClose.nix
-
-      ../applications/development/editors.nix
 
       ../services/reconnect.nix
-      ../services/update.nix
-
-      ../security/ssh.nix
 
       ./hardware-configuration.nix
     ];
@@ -23,18 +17,22 @@
    };
   
   
-  security.sudo.extraRules = [
-    {
-      users = [ userSettings.username ];
-      commands = [
-        { command = "${pkgs.nixos-rebuild}/bin/nixos-rebuild"; options = [ "NOPASSWD" ]; }
-      ];
-    }
-  ];
+  
 
-  features.services = {
-    jellyfin.enable = true;
-    qbittorrent.enable = true;
+  features = {
+    hardware.noSleep.enable = true;
+    services = {
+      jellyfin.enable = true;
+      qbittorrent.enable = true;
+      updateSystem.enable = true;
+    };
+    security = {
+      openssh = {
+        enable = true;
+        allowSFTP = true;
+      };
+      sudo.allowNixRebuild = true;
+    };
   };
   # Configure keymap in X11
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
