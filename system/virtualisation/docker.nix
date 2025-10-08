@@ -1,4 +1,4 @@
-{ config, libs, pkgs, userSettings, ... }:
+{ config, lib, pkgs, userSettings, ... }:
 with lib;
 let 
   cfg = config.features.virtualisation.docker;

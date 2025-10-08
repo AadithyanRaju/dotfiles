@@ -4,7 +4,6 @@
   imports =[ 
     ../base.nix
     ./hardware-configuration.nix
-    ./nvidia.nix
     ./systemPackages.nix
     
     ];

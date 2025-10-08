@@ -9,7 +9,7 @@ in
       type = types.bool;
       default = false;
       description = "Enable printing support.";
-    }
+    };
   };
   
   config = mkIf cfg.enable {
