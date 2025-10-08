@@ -19,6 +19,11 @@
       zed.enable = true;
       intellijUltimate.enable = false;
     };
+    communication = {
+      telegram.enable = true;
+      signal.enable = true;
+      discord.enable = true;
+    };
     compilers = {
       ccpp.enable = true;
       haskell.enable = true;

@@ -37,9 +37,6 @@
     telegram-desktop
     discord
 
-    #Browser
-    firefox
-
     #Media
     ffmpeg_6-full
     vlc
