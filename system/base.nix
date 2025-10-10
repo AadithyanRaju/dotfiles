@@ -8,7 +8,7 @@
       ./hardware
       ./settings.nix
       ./services
-      ./scurity
+      ./security
       ./virtualisation
 
 
