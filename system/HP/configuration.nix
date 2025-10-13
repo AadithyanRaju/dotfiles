@@ -21,6 +21,7 @@
 
   features = {
     hardware.noSleep.enable = true;
+    hardware.nvidia.enable = false;
     services = {
       jellyfin.enable = true;
       qbittorrent.enable = true;
