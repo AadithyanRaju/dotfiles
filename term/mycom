@@ -19,6 +19,9 @@ burp() {
 minecraft(){
   /nix/store/$(ls /nix/store/ | grep steam-run$ | head -1)/bin/steam-run java -jar .dotfiles/Scripts/Minecraft/TLauncher.jar
 }
+minecraft2(){
+  nix-shell -p steam-run --run 'steam-run java -jar $HOME/.dotfiles/Scripts/Minecraft/TLauncher.jar'
+}
 alias mine='minecraft; exit'
 alias python='python3'
 alias scr='scrcpy -Sw --power-off-on-close'
