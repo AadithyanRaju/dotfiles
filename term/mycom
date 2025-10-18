@@ -17,9 +17,7 @@ burp() {
   cd - > /dev/null
 }
 minecraft(){
-  cd $HOME/.dotfiles/Scripts/Minecraft
-  nix develop
-  cd - > /dev/null
+  /nix/store/$(ls /nix/store/ | grep steam-run$ | head -1)/bin/steam-run java -jar .dotfiles/Scripts/Minecraft/TLauncher.jar
 }
 alias mine='minecraft; exit'
 alias python='python3'

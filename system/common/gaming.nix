@@ -53,6 +53,7 @@ in
       mesa
       protonup-qt
       steam
+      steam-run
     ];
   };
 }

@@ -34,6 +34,7 @@
       };
       sudo.allowNixRebuild = true;
     };
+    gaming.enable = true;
   };
   # Configure keymap in X11
   # services.xserver.xkbOptions = "eurosign:e,caps:escape";
