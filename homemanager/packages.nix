@@ -2,8 +2,8 @@
 {
   home.packages = with pkgs; [
       #multimarkdown
-      
 
+      direnv
       #RPC
       #libnsl
       #libtirpc
