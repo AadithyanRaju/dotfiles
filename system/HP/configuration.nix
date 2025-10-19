@@ -10,11 +10,6 @@
       ./hardware-configuration.nix
     ];
 
-  services = {
-    xserver.videoDrivers = [
-      "amdgpu"
-    ];
-   };
   
   
   
