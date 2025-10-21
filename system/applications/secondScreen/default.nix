@@ -1,3 +1,3 @@
 {...}:{
-  import = [ ./weylux.nix ];
+  imports = [ ./weylus.nix ];
 }
