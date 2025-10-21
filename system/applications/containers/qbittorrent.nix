@@ -28,34 +28,46 @@ in
       default = 8080;
       description = "Port for the qBittorrent Web UI.";
     };
+
+    allowFirewallBypass = mkOption {
+      type = types.bool;
+      default = true;
+      description = "Allow qBittorrent to bypass the firewall (not recommended).";
+    };
   };
 
-  config = mkIf cfg.enable {
-    virtualisation.docker.enable = true;
+  config = mkMerge [
+    (mkIf cfg.enable {
+      virtualisation.docker.enable = true;
 
-    virtualisation.oci-containers.containers.qbittorrent = {
-      image = "lscr.io/linuxserver/qbittorrent:latest";
-      autoStart = cfg.autoStart;
-      extraOptions = [ "--network=host" ];
+      virtualisation.oci-containers.containers.qbittorrent = {
+        image = "lscr.io/linuxserver/qbittorrent:latest";
+        autoStart = cfg.autoStart;
+        extraOptions = [ "--network=host" ];
 
-      environment = {
-        PUID = "1000";
-        PGID = "100";
-        TZ = "Asia/Kolkata";
-        UMASK_SET = "022";
-        WEBUI_PORT = toString cfg.webUIPort;
+        environment = {
+          PUID = "1000";
+          PGID = "100";
+          TZ = "Asia/Kolkata";
+          UMASK_SET = "022";
+          WEBUI_PORT = builtins.toString cfg.webUIPort;
+        };
+
+        volumes = [
+          "${cfg.storagePath}/appdata:/appdata"
+          "${cfg.storagePath}/downloads:/downloads"
+          "${cfg.storagePath}/config:/config"
+        ];
       };
 
-      volumes = [
-        "${cfg.storagePath}/appdata:/appdata"
-        "${cfg.storagePath}/downloads:/downloads"
-        "${cfg.storagePath}/config:/config"
-      ];
-    };
+      networking.firewall = {
+        allowedTCPPorts = lib.mkDefault [ 6881 ];
+        allowedUDPPorts = lib.mkDefault [ 6881 ];
+      };
+    })
 
-    networking.firewall = {
-      allowedTCPPorts = [ cfg.webUIPort 6881 ];
-      allowedUDPPorts = [ 6881 ];
-    };
-  };
+    (mkIf cfg.allowFirewallBypass {
+      networking.firewall.allowedTCPPorts = lib.mkDefault [ cfg.webUIPort  ];
+    })
+  ];
 }

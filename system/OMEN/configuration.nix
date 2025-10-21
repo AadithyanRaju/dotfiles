@@ -51,7 +51,11 @@
       };
     };
     gaming.enable = true;
-
+    services.qbittorrent = {
+      enable = true;
+      storagePath = "${userSettings.userHome}/data/qbittorrent";
+      allowFirewallBypass = false;
+    };
   };
 }
 

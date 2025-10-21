@@ -4,6 +4,7 @@
     ./ai
     ./containers
     ./development
+    ./secondScreen
     ./utils
   ];
 }
