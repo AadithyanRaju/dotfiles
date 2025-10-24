@@ -1,8 +1,11 @@
-allow-images=true
+show=drun
+allow_images=true
+image_size=25
+cache_file=/dev/null
+hide_scroll=true
+
 allow-markup=true
 insensitive=true
-hide-scroll=true
 prompt=   Search...
-width=40%
+width=25%
 height=30%
-image-size=45

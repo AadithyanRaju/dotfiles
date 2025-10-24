@@ -52,10 +52,11 @@
     };
     gaming.enable = true;
     services.qbittorrent = {
-      enable = true;
+      enable = false;
       storagePath = "${userSettings.userHome}/data/qbittorrent";
       allowFirewallBypass = false;
     };
+    secondScreen.enable = false;
   };
 }
 

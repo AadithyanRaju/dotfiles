@@ -22,7 +22,7 @@
         hyprpaper
         hyprpolkitagent
         hyprshot
-        hyprsysteminfo
+        #hyprsysteminfo  -- build error CMake Error at src/CMakeLists.txt:15
         hyprutils
         hyprwayland-scanner
         kitty
