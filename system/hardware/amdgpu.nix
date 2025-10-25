@@ -18,7 +18,7 @@ in
         rocmPackages.clr.icd          # OpenCL runtime
         rocmPackages.rocm-smi         # GPU management
         mesa                          # Mesa drivers
-        mesa.vulkanDrivers            # Vulkan drivers
+        #mesa.vulkanDrivers            # Vulkan drivers
         vaapiVdpau                    # VA-API to VDPAU bridge
         libvdpau-va-gl                # VDPAU via OpenGL
       ];
