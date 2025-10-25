@@ -13,7 +13,7 @@ in
   config = mkIf cfg.enable {
     hardware.graphics = {
       enable = true;
-      driSupport32Bit = true;
+      #driSupport32Bit = true;
       extraPackages = with pkgs; [
         rocmPackages.clr.icd          # OpenCL runtime
         rocmPackages.rocm-smi         # GPU management
