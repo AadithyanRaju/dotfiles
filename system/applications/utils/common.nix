@@ -56,6 +56,8 @@
 
     #USB
     libusb1
+
+    tmux
   ];
 
 }
