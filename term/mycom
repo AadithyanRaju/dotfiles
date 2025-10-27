@@ -20,6 +20,7 @@ minecraft(){
   /nix/store/$(ls /nix/store/ | grep steam-run$ | head -1)/bin/steam-run java -jar .dotfiles/Scripts/Minecraft/TLauncher.jar
 }
 minecraft2(){
+  export NIXPKGS_ALLOW_UNFREE=1
   nix-shell -p steam-run --run 'steam-run java -jar $HOME/.dotfiles/Scripts/Minecraft/TLauncher.jar'
 }
 alias mine='minecraft; exit'
