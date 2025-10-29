@@ -20,6 +20,11 @@ in
       default = false;
       description = "Enable Google Chrome web browser.";
     };
+    vivaldi.enable = mkOption {
+      type = types.bool;
+      default = false;
+      description = "Enable Vivaldi web browser.";
+    };
   };
 
   config = mkMerge [
@@ -31,6 +36,9 @@ in
     })
     (mkIf cfg.chrome.enable {
       environment.systemPackages = with pkgs; [ google-chrome ];
+    })
+    (mkIf cfg.vivaldi.enable {
+      environment.systemPackages = with pkgs; [ vivaldi ];
     })
   ];
 }

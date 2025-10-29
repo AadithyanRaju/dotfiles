@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, ... }:
+{ pkgs, userSettings, ... }:
 
 {
   imports =[ 
@@ -12,6 +12,7 @@
     apps = {
       browsers = {
         chrome.enable = true;
+        vivaldi.enable = true;
       };
       communication = {
         signal.enable = true;
