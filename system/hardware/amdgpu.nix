@@ -19,7 +19,7 @@ in
         rocmPackages.rocm-smi         # GPU management
         mesa                          # Mesa drivers
         #mesa.vulkanDrivers            # Vulkan drivers
-        vaapiVdpau                    # VA-API to VDPAU bridge
+        libva-vdpau-driver            # VA-API to VDPAU bridge
         libvdpau-va-gl                # VDPAU via OpenGL
       ];
     };
