@@ -33,7 +33,7 @@ in
               vulkan-validation-layers
               vulkan-extension-layer
               libvdpau
-              vaapiVdpau
+              libva-vdpau-driver
               libva
               wineWowPackages.stable
           ];
