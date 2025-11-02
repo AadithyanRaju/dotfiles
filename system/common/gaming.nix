@@ -49,7 +49,7 @@ in
       })
       #lutris
       gamemode
-      glxinfo
+      mesa-demos
       mesa
       protonup-qt
       steam
