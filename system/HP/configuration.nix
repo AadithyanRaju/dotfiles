@@ -22,7 +22,10 @@
     };
     services = {
       jellyfin.enable = true;
-      qbittorrent.enable = true;
+      qbittorrent = {
+        enable = true;
+        allowFirewallBypass = true;
+      };
       updateSystem.enable = true;
     };
     security = {

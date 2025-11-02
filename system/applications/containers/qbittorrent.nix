@@ -67,7 +67,7 @@ in
     })
 
     (mkIf cfg.allowFirewallBypass {
-      networking.firewall.allowedTCPPorts = lib.mkDefault [ cfg.webUIPort  ];
+      networking.firewall.allowedTCPPorts = lib.mkDefault [ cfg.webUIPort 6881 ];
     })
   ];
 }
