@@ -37,6 +37,7 @@
         # burpsuite
         # ghidra
         # thc-hydra
+        ida-free
        ];
     };
     virtualisation = {
