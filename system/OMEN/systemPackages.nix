@@ -9,7 +9,6 @@
     #Utilities
     anydesk       #Remote desktop
     flameshot
-    openvpn
     scrcpy        #Screen mirroring
     sticky        #Sticky notes
     

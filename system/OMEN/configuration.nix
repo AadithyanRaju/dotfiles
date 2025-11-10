@@ -39,6 +39,7 @@
         # thc-hydra
         ida-free
         sqlitebrowser
+        openvpn
        ];
     };
     virtualisation = {
