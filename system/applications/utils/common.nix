@@ -11,9 +11,6 @@
     ];
   };
   environment.systemPackages = with pkgs; [
-    #Git
-    git
-    gh
 
     #Utilities
     android-tools #adb

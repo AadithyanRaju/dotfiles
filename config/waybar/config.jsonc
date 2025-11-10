@@ -6,7 +6,7 @@
         "$HOME/.dotfiles/config/waybar/ModulesGroups",
         "$HOME/.dotfiles/config/waybar/UserModules"
     ],
-    "layer": "top", // Waybar at top layer
+    "layer": "bottom", // Waybar at bottom layer
     "position": "bottom", // Waybar position (top|bottom|left|right)
     //"height": 24, // Waybar height (to be removed for auto height)
     "exclusive": true,

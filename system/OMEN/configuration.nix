@@ -38,6 +38,7 @@
         # ghidra
         # thc-hydra
         ida-free
+        sqlitebrowser
        ];
     };
     virtualisation = {
@@ -59,6 +60,7 @@
       allowFirewallBypass = false;
     };
     secondScreen.enable = false;
+    git.gitkraken = true;
   };
 }
 

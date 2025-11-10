@@ -4,7 +4,6 @@
   environment.systemPackages = with pkgs; [
     #libsForQt5.ktorrent
     #ollama
-    gitkraken
 
     
     #Utilities
