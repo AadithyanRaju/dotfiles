@@ -47,7 +47,6 @@
                 specialArgs = {
                     inherit userSettings;
                     inherit inputs;
-                    inherit outputs;
                     inherit systemSettings;
                     hostName = name;
                 };
@@ -62,7 +61,6 @@
                 };
             };
     in {
-        overlays = import ./overlays { inherit inputs; };
         nixosConfigurations = {
             OMEN = mkSystem "OMEN" ./system/OMEN/configuration.nix;
             HP = mkSystem "HP" ./system/HP/configuration.nix;   

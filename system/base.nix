@@ -6,6 +6,7 @@
       ./applications
       ./common
       ./hardware
+      ./overlays
       ./settings.nix
       ./services
       ./security
@@ -23,9 +24,9 @@
   };
   nixpkgs = {
     overlays = [ 
-      outputs.overlays.additions 
-      outputs.overlays.modifications
-      outputs.overlays.stable-packages
+      overlays.additions 
+      overlays.modifications
+      overlays.stable-packages
     ];
   };
 }
