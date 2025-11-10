@@ -44,6 +44,7 @@
     };
     virtualisation = {
       kvm.enable = true;
+      vmware.enable = true;
     };
     hardware = {
       printing.enable = true;

@@ -13,14 +13,22 @@
   environment.systemPackages = with pkgs; [
 
     #Utilities
+    binutils 
+    coreutils
+    diffutils
+    findutils     #find
+    idutils       #id
+    inetutils     
+    mailutils     #mail
+    recutils
+    sharutils
+
     android-tools #adb
     btop
     curl
-    findutils     #find
     gallery-dl
     gparted
     htop
-    inetutils     
     jq
     lsof          #List open files
     netcat-gnu	  #nc

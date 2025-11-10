@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, outputs, ... }:
 
 {
   imports =
@@ -20,5 +20,12 @@
   services = {
     gnome.gnome-keyring.enable = true;
     flatpak.enable = true;
+  };
+  nixpkgs = {
+    overlays = [ 
+      outputs.overlays.additions 
+      outputs.overlays.modifications
+      outputs.overlays.stable-packages
+    ];
   };
 }

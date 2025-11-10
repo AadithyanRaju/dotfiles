@@ -2,9 +2,8 @@
     description = "Flake of Aadithyan";
 
     inputs = {
-        nixpkgs = {
-            url = "github:NixOS/nixpkgs/nixos-unstable";
-        };
+        nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+        nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-25.05";
         home-manager = {
             url = "github:nix-community/home-manager/master";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -48,6 +47,7 @@
                 specialArgs = {
                     inherit userSettings;
                     inherit inputs;
+                    inherit outputs;
                     inherit systemSettings;
                     hostName = name;
                 };
@@ -62,6 +62,7 @@
                 };
             };
     in {
+        overlays = import ./overlays { inherit inputs; };
         nixosConfigurations = {
             OMEN = mkSystem "OMEN" ./system/OMEN/configuration.nix;
             HP = mkSystem "HP" ./system/HP/configuration.nix;   
