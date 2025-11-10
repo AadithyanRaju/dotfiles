@@ -18,19 +18,15 @@ in
   };
   config = mkMerge [
     (mkIf cfg.enable {
-      {
         environment.systemPackages = with pkgs; [
           git
           gh
         ];
-      }
     })
     (mkIf cfg.gitkraken {
-      {
         environment.systemPackages = with pkgs; [
           gitkraken
         ];
-      }
     })
   ];
 }
