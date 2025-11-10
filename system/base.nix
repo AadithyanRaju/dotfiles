@@ -1,4 +1,4 @@
-{ config, pkgs, inputs, outputs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports =
@@ -6,7 +6,6 @@
       ./applications
       ./common
       ./hardware
-      ./overlays
       ./settings.nix
       ./services
       ./security
@@ -22,11 +21,15 @@
     gnome.gnome-keyring.enable = true;
     flatpak.enable = true;
   };
-  nixpkgs = {
-    overlays = [ 
-      overlays.additions 
-      overlays.modifications
-      overlays.stable-packages
-    ];
-  };
+  nixpkgs.overlays = [ 
+    (final: prev:
+    let stablePkgs = import inputs.nixpkgs-stable {
+      system = final.system;
+      config.allowUnfree = true;
+    };
+    in {
+      stable = stablePkgs;
+    }
+  )
+  ];
 }
