@@ -16,8 +16,9 @@ in
             host.enable = true;
             guest.enable = true;
         };
+        nixpkgs.overlays = [ (import ../overlays/vmware-25h2.nix) ];
         environment.systemPackages = with pkgs; [
-            stable.vmware-workstation # Use `vmware-player` for free version
+            vmware-workstation # Use `vmware-player` for free version
             open-vm-tools  # VMware guest tools
         ];
         users.users.${userSettings.username}.extraGroups = [ "vboxusers" "libvirtd" "kvm" "disk" ];

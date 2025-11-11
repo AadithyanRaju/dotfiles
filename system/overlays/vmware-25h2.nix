@@ -6,9 +6,9 @@ in
   vmware-workstation = super.vmware-workstation.overrideAttrs (old: {
     version = "25H2"; 
     src = pkgs.fetchurl {
-      url = "https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Workstation%20Pro&freeDownloads=true";
+      url = "file:///home/aadithyan/.dotfiles/additionalFiles/VMware-Workstation-Full-25H2-24995812.x86_64.bundle";
       # Replace sha256 with the value from nix-prefetch-url (see commands below)
-      sha256 = "08ik14acywlxb10v733carg67xablml734d9k8p3ijak0s5fvv4v"; 
+      sha256 = "ceW7c8QUr952qxO24qvs/fvYq/hMPjuwJUHX6hvO/8U="; 
     };
     patches = (old.patches or []) ++ ( /* add additional patches here if needed */ []);
     nativeBuildInputs = (old.nativeBuildInputs or []) ++ [ pkgs.which ];
