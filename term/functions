@@ -24,8 +24,14 @@ ex ()
 }
 
 # Youtube Download 
-youtubeDownload(){
+youtubeDownloadPlaylist(){
     if [ $# -eq 1 ];then
         yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "$1"
+    fi
+}
+
+youtubeDownloadVideo(){
+    if [ $# -eq 1 ];then
+        yt-dlp -o "%(title)s.%(ext)s" "$1"
     fi
 }
